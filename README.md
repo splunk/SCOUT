@@ -48,9 +48,9 @@ The following steps outline the essential configuration required to ensure prope
 In the Configuration tab, the user must specify three key folder paths where this tool parses metadata to generate correlation searches:
 | Fields                                        | Description
 |-----------------------------------------------|-----------------------------------------------------------------------|
-| **Security Content Detection Directory Path** | The folder path containing Splunk Security Content detections.        |
-| **ATT&CK CTI Repository Directory Path**      | The folder path where the cloned attackcti repository is located.     |
-| **Security Content Story Directory Path**     | The folder path containing Splunk Security Content Analytic Stories.  |
+| **Security Content Detection Dir Path**       | The folder path containing Splunk Security Content detections.        |
+| **ATT&CK CTI Repo Dir Path**                  | The folder path where the cloned attackcti repository is located.     |
+| **Security Content Story Dir Path**           | The folder path containing Splunk Security Content Analytic Stories.  |
 | **Default Author**                            | The default author name for correlation searches.                     |
   
 All other fields can be left as they are.
