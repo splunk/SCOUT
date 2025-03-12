@@ -1,0 +1,47 @@
+name: 
+id: 
+version: 1
+date: 
+author: 
+status: production
+type: Correlation
+data_source: []
+description: The following correlation search identifies <<description_detail>>
+search: '<<correlation_search>> | `<<correlation_filter_macro>>`'
+how_to_implement: Splunk Enterprise Security is required to utilize this correlation.
+  In addition, modify the source_count value to your environment. In our testing,
+  a count of 4 or 5 was decent in a lab, but the number may need to be increased base
+  on internal testing. In addition, based on false positives, modify any analytics
+  to be anomaly and lower or increase risk based on organization importance.
+known_false_positives: False positives will be present based on many factors. Tune
+  the correlation as needed to reduce too many triggers.
+references: []
+drilldown_searches:
+- name: View the detection results for - "$risk_object$"
+  search: '%original_detection_search% | search  risk_object = "$risk_object$"'
+  earliest_offset: $info_min_time$
+  latest_offset: $info_max_time$
+- name: View risk events for the last 7 days for - "$risk_object$"
+  search: '| from datamodel Risk.All_Risk | search normalized_risk_object IN ("$risk_object$")
+    starthoursago=168  | stats count min(_time) as firstTime max(_time) as lastTime
+    values(search_name) as "Search Name" values(risk_message) as "Risk Message" values(analyticstories)
+    as "Analytic Stories" values(annotations._all) as "Annotations" values(annotations.mitre_attack.mitre_tactic)
+    as "ATT&CK Tactics" by normalized_risk_object | `security_content_ctime(firstTime)`
+    | `security_content_ctime(lastTime)`'
+  earliest_offset: $info_min_time$
+  latest_offset: $info_max_time$
+tags:
+  analytic_story: []
+  asset_type: Endpoint
+  mitre_attack_id: []
+  product:
+  - Splunk Enterprise
+  - Splunk Enterprise Security
+  - Splunk Cloud
+  security_domain: endpoint
+tests:
+- name: True Positive Test
+  attack_data:
+  - data: []
+    source: mod_reg
+    sourcetype: stash

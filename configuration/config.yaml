@@ -1,0 +1,104 @@
+assets:
+  banner_img_name: banner.png
+common_field_name:
+  description: All_Risk.mitre_attack_mitre_description
+  name: source
+  tags.analytic_story: All_Risk.analyticstories
+  tags.mitre_attack_id: All_Risk.annotations.mitre_attack.mitre_technique_id
+  tags.risk_score: All_Risk.calculated_risk_score
+correlation:
+  confidence_score: '25'
+  cor_search_name_list:
+  - correlation_template1
+  - correlation_template2
+  - customized_correlation_template
+  correlation_description: The following correlation search identifies for Known Compromised
+    Linux Host Analytics.
+  correlation_filter_fields:
+  - name
+  - type
+  - tags.analytic_story
+  - tags.mitre_attack_id
+  - rba.risk_objects.score
+  correlation_filter_substr:
+  - name
+  - description
+  correlation_output_dir: gen_correlation_yml
+  correlation_output_dir_by_story: correlation_yml_by_story
+  correlation_output_dir_by_tag: correlation_yml_by_tag
+  correlation_template1: '| tstats `security_content_summariesonly` min(_time) as
+    firstTime, max(_time) as lastTime, sum(All_Risk.calculated_risk_score) as risk_score,
+    count(All_Risk.calculated_risk_score) as risk_event_count, values(All_Risk.annotations.mitre_attack.mitre_tactic_id)
+    as annotations.mitre_attack.mitre_tactic_id, dc(All_Risk.annotations.mitre_attack.mitre_tactic_id)
+    as mitre_tactic_id_count, values(All_Risk.annotations.mitre_attack.mitre_technique_id)
+    as annotations.mitre_attack.mitre_technique_id, dc(All_Risk.annotations.mitre_attack.mitre_technique_id)
+    as mitre_technique_id_count, values(All_Risk.tag) as tag, values(source) as source,
+    dc(source) as source_count from datamodel=Risk.All_Risk where <<condition_splunk_search>>
+    by All_Risk.risk_object All_Risk.risk_object_type All_Risk.annotations.mitre_attack.mitre_tactic
+    | `drop_dm_object_name(All_Risk)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`
+    | where source_count >= <<source_count_condition>>'
+  correlation_template2: '| tstats `security_content_summariesonly` min(_time) as
+    firstTime, max(_time) as lastTime, sum(All_Risk.calculated_risk_score) as risk_score,
+    count(All_Risk.calculated_risk_score) as risk_event_count, values(All_Risk.annotations.mitre_attack.mitre_tactic_id)
+    as annotations.mitre_attack.mitre_tactic_id, dc(All_Risk.annotations.mitre_attack.mitre_tactic_id)
+    as mitre_tactic_id_count, values(All_Risk.annotations.mitre_attack.mitre_technique_id)
+    as annotations.mitre_attack.mitre_technique_id, dc(All_Risk.annotations.mitre_attack.mitre_technique_id)
+    as mitre_technique_id_count, values(All_Risk.tag) as tag, values(source) as source,
+    dc(source) as source_count from datamodel=Risk.All_Risk where <<condition_splunk_search>>
+    by All_Risk.risk_object All_Risk.risk_object_type All_Risk.annotations.mitre_attack.mitre_tactic
+    | `drop_dm_object_name(All_Risk)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`
+    | eval threshold = <<threshold_value>> | eval search_name_threshold_score = source_count
+    * threshold | eval norm_search_name_threshold_score=if(search_name_threshold_score
+    <=2, 2, round(search_name_threshold_score, 0)) | where source_count >= norm_search_name_threshold_score'
+  correlation_yml_name: Compromised Test Host Correlation Agent
+  correlation_yml_template_file_path: correlation_analytic_template2.yml
+  customized_correlation_template: '| tstats `security_content_summariesonly` min(_time)
+    as firstTime, max(_time) as lastTime, sum(All_Risk.calculated_risk_score) as risk_score,
+    count(All_Risk.calculated_risk_score) as risk_event_count, values(All_Risk.annotations.mitre_attack.mitre_tactic_id)
+    as annotations.mitre_attack.mitre_tactic_id, dc(All_Risk.annotations.mitre_attack.mitre_tactic_id)
+    as mitre_tactic_id_count, values(All_Risk.annotations.mitre_attack.mitre_technique_id)
+    as annotations.mitre_attack.mitre_technique_id, dc(All_Risk.annotations.mitre_attack.mitre_technique_id)
+    as mitre_technique_id_count, values(All_Risk.tag) as tag, values(source) as source,
+    dc(source) as source_count from datamodel=Risk.All_Risk where <<condition_splunk_search>>
+    by All_Risk.risk_object All_Risk.risk_object_type All_Risk.annotations.mitre_attack.mitre_tactic
+    | `drop_dm_object_name(All_Risk)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`
+    | where source_count >= <<source_count_condition>>'
+  default_corr_data: []
+  default_name: Default Test Name Correlation
+  impact: '25'
+  risk_score: 5
+  source_count_perc: 0.2
+settings:
+  analytic_story_description_json_file_name: analytic_story_description.json
+  assets_dir_path: ~/Research/repo-tools/SCCH/assets
+  attackcti_repo_dir_path: ~/Research/repo-tools/scolper/cti
+  cache_sec_con_filter_name: filtered_sec_con_detection_name.json
+  correlation_template: '| tstats `security_content_summariesonly` min(_time) as firstTime,
+    max(_time) as lastTime, sum(All_Risk.calculated_risk_score) as risk_score, count(All_Risk.calculated_risk_score)
+    as risk_event_count, values(All_Risk.annotations.mitre_attack.mitre_tactic_id)
+    as annotations.mitre_attack.mitre_tactic_id, dc(All_Risk.annotations.mitre_attack.mitre_tactic_id)
+    as mitre_tactic_id_count, values(All_Risk.annotations.mitre_attack.mitre_technique_id)
+    as annotations.mitre_attack.mitre_technique_id, dc(All_Risk.annotations.mitre_attack.mitre_technique_id)
+    as mitre_technique_id_count, values(All_Risk.tag) as tag, values(source) as source,
+    dc(source) as source_count from datamodel=Risk.All_Risk where <<condition_splunk_search>>
+    by All_Risk.risk_object All_Risk.risk_object_type All_Risk.annotations.mitre_attack.mitre_tactic
+    | `drop_dm_object_name(All_Risk)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`
+    | where source_count >= <<source_count_condition>>'
+  customized_correlation_template: '| tstats `security_content_summariesonly` min(_time)
+    as firstTime, max(_time) as lastTime, sum(All_Risk.calculated_risk_score) as risk_score,
+    count(All_Risk.calculated_risk_score) as risk_event_count, values(All_Risk.annotations.mitre_attack.mitre_tactic_id)
+    as annotations.mitre_attack.mitre_tactic_id, dc(All_Risk.annotations.mitre_attack.mitre_tactic_id)
+    as mitre_tactic_id_count, values(All_Risk.annotations.mitre_attack.mitre_technique_id)
+    as annotations.mitre_attack.mitre_technique_id, dc(All_Risk.annotations.mitre_attack.mitre_technique_id)
+    as mitre_technique_id_count, values(All_Risk.tag) as tag, values(source) as source,
+    dc(source) as source_count from datamodel=Risk.All_Risk where <<condition_splunk_search>>
+    by All_Risk.risk_object All_Risk.risk_object_type All_Risk.annotations.mitre_attack.mitre_tactic
+    | `drop_dm_object_name(All_Risk)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`
+    | where source_count >= <<source_count_condition>>'
+  default_author: John Wick, Splunk
+  generated_attack_data_json: mitre_tid_tactic_technique.json
+  generated_attack_tid_desc_json: mitre_tid_name_description.json
+  generated_sec_con_json: security_content_df.json
+  security_content_detection_dir_path: ~/Research/lab/security_content/detections
+  security_content_story_dir_path: ~/Research/lab/security_content/stories
+  story_detection_coverage_file_name: story_coverage.json

@@ -1,0 +1,2162 @@
+{
+    "linux post-exploitation": [
+        "This analytic story identifies popular Linux post exploitation tools such as autoSUID, LinEnum, LinPEAS, Linux Exploit Suggesters, MimiPenguin.",
+        [
+            "https://attack.mitre.org/matrices/enterprise/linux/"
+        ]
+    ],
+    "ivanti connect secure vpn vulnerabilities": [
+        "The following analytic story addresses critical vulnerabilities CVE-2023-46805 and CVE-2024-21887 in Ivanti Connect Secure and Ivanti Policy Secure Gateways. CVE-2023-46805 is an authentication bypass vulnerability, while CVE-2024-21887 is a command injection flaw, both presenting significant risks in versions 9.x and 22.x. Combined, these vulnerabilities enable unauthenticated threat actors to execute arbitrary commands, compromising system integrity. Immediate mitigation is imperative, with patches scheduled for staggered release. Ivanti has provided interim mitigation steps, and it's crucial for customers to apply these measures to protect their systems against potential exploits.",
+        [
+            "https://github.com/RootUp/PersonalStuff/blob/master/http-vuln-cve2023-46805_2024_21887.nse",
+            "https://github.com/projectdiscovery/nuclei-templates/blob/c6b351e71b0fb0e40e222e97038f1fe09ac58194/http/misconfiguration/ivanti/CVE-2023-46085-CVE-2024-21887-mitigation-not-applied.yaml",
+            "https://github.com/rapid7/metasploit-framework/pull/18708/files",
+            "https://attackerkb.com/topics/AdUh6by52K/cve-2023-46805/rapid7-analysis",
+            "https://labs.watchtowr.com/welcome-to-2024-the-sslvpn-chaos-continues-ivanti-cve-2023-46805-cve-2024-21887/",
+            "https://www.volexity.com/blog/2024/01/10/active-exploitation-of-two-zero-day-vulnerabilities-in-ivanti-connect-secure-vpn/",
+            "https://www.mandiant.com/resources/blog/suspected-apt-targets-ivanti-zero-day",
+            "https://forums.ivanti.com/s/article/CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US"
+        ]
+    ],
+    "ws ftp server critical vulnerabilities": [
+        "A critical security advisory was released by Progress Software on September 27, 2023, concerning multiple vulnerabilities in WS_FTP Server, a widely-used secure file transfer solution. The two critical vulnerabilities are CVE-2023-40044, a .NET deserialization flaw, and CVE-2023-42657, a directory traversal vulnerability. Rapid7 has observed active exploitation of these vulnerabilities. Affected versions are prior to 8.7.4 and 8.8.2. Immediate action is advised - upgrade to WS_FTP Server version 8.8.2. For those unable to update, disabling the Ad Hoc Transfer module is suggested as a temporary measure. This comes in the wake of increased scrutiny following the Cl0p ransomware attack on MOVEit Transfer in May 2023.",
+        [
+            "https://www.assetnote.io/resources/research/rce-in-progress-ws-ftp-ad-hoc-via-iis-http-modules-cve-2023-40044",
+            "https://community.progress.com/s/article/WS-FTP-Server-Critical-Vulnerability-September-2023",
+            "https://www.cve.org/CVERecord?id=CVE-2023-40044",
+            "https://www.rapid7.com/blog/post/2023/09/29/etr-critical-vulnerabilities-in-ws_ftp-server/",
+            "https://www.splunk.com/en_us/blog/security/fantastic-iis-modules-and-how-to-find-them.html"
+        ]
+    ],
+    "brute ratel c4": [
+        "Leverage searches that allow you to detect and investigate unusual activities that may be related to Brute Ratel Red Teaming tool. This includes creation, modification and deletion of services, collection or data, ping IP, DNS cache, process injection, debug privileges adjustment, winlogon process duplicate token, lock workstation, get clipboard or screenshot and much more.",
+        [
+            "https://unit42.paloaltonetworks.com/brute-ratel-c4-tool/",
+            "https://www.mdsec.co.uk/2022/08/part-3-how-i-met-your-beacon-brute-ratel/"
+        ]
+    ],
+    "aws s3 bucket security monitoring": [
+        "This analytic story contains detections that monitor AWS S3 bucket configurations, access patterns, and potential security risks, with a specific focus on tracking decommissioned public buckets to prevent bucket hijacking attempts.",
+        [
+            "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html",
+            "https://labs.watchtowr.com/8-million-requests-later-we-made-the-solarwinds-supply-chain-attack-look-amateur/",
+            "https://aws.amazon.com/premiumsupport/knowledge-center/secure-s3-resources/"
+        ]
+    ],
+    "dhs report ta18-074a": [
+        "Monitor for suspicious activities associated with DHS Technical Alert US-CERT TA18-074A. Some of the activities that adversaries used in these compromises included spearfishing attacks, malware, watering-hole domains, many and more.",
+        [
+            "https://www.us-cert.gov/ncas/alerts/TA18-074A"
+        ]
+    ],
+    "masquerading - rename system utilities": [
+        "Adversaries may rename legitimate system utilities to try to evade security mechanisms concerning the usage of those utilities.",
+        [
+            "https://attack.mitre.org/techniques/T1036/003/"
+        ]
+    ],
+    "blacksuit ransomware": [
+        "This analytic story covers the tactics, techniques, and procedures (TTPs) associated with BlackSuit ransomware, as observed in a December 2023 intrusion. The story encompasses the full attack lifecycle, from initial access via Cobalt Strike beacons to lateral movement, credential access, and ultimately the deployment of BlackSuit ransomware. It aims to help security teams detect and respond to similar attacks by focusing on key behaviors such as Cobalt Strike activity, use of tools like ADFind and Sharphound, and the final ransomware deployment phase.",
+        [
+            "https://thedfirreport.com/2024/08/26/blacksuit-ransomware/"
+        ]
+    ],
+    "microsoft sharepoint server elevation of privilege cve-2023-29357": [
+        "This analytic story focuses on the Microsoft SharePoint Server vulnerability CVE-2023-29357, which allows for an elevation of privilege due to improper handling of authentication tokens. Exploitation of this vulnerability could lead to a serious security breach where an attacker might gain privileged access to the SharePoint environment, potentially leading to data theft or other malicious activities. This story is associated with the detection `Microsoft SharePoint Server Elevation of Privilege` which identifies attempts to exploit this vulnerability.",
+        [
+            "https://socradar.io/microsoft-sharepoint-server-elevation-of-privilege-vulnerability-exploit-cve-2023-29357/",
+            "https://github.com/Chocapikk/CVE-2023-29357"
+        ]
+    ],
+    "chaos ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the Chaos ransomware, including looking for file writes (file encryption and ransomware notes), deleting shadow volume storage, registry key modification, dropping of files in startup folder, and more.",
+        [
+            "https://blog.qualys.com/vulnerabilities-threat-research/2022/01/17/the-chaos-ransomware-can-be-ravaging",
+            "https://www.fortinet.com/blog/threat-research/chaos-ransomware-variant-in-fake-minecraft-alt-list-brings-destruction",
+            "https://marcoramilli.com/2021/06/14/the-allegedly-ryuk-ransomware-builder-ryukjoke/",
+            "https://www.trendmicro.com/en_us/research/21/h/chaos-ransomware-a-dangerous-proof-of-concept.html"
+        ]
+    ],
+    "microsoft mshtml remote code execution cve-2021-40444": [
+        "CVE-2021-40444 is a remote code execution vulnerability in MSHTML, recently used to delivery targeted spearphishing documents.",
+        [
+            "https://blog.malwarebytes.com/exploits-and-vulnerabilities/2021/09/windows-mshtml-zero-day-actively-exploited-mitigations-required/",
+            "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-40444",
+            "https://www.echotrail.io/insights/search/control.exe"
+        ]
+    ],
+    "asyncrat": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the AsyncRAT malware including mshta application child process, bat loader execution, persistence and many more. AsyncRAT is an open source remote administration tool released last 2019. It's designed to remotely control computers via an encrypted connection, with view screen, keylogger, chat communication, persistence, defense evasion (e.g. Windows defender), DOS attack and many more.",
+        [
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.asyncrat",
+            "https://www.netskope.com/blog/asyncrat-using-fully-undetected-downloader"
+        ]
+    ],
+    "aws user monitoring": [
+        "Detect and investigate dormant user accounts for your AWS environment that have become active again. Because inactive and ad-hoc accounts are common attack targets, it's critical to enable governance within your environment.",
+        [
+            "https://d0.awsstatic.com/whitepapers/aws-security-best-practices.pdf",
+            "https://redlock.io/blog/cryptojacking-tesla"
+        ]
+    ],
+    "amadey": [
+        "This analytic story contains searches that aims to detect activities related to Amadey, a type of malware that primarily operates as a banking Trojan. It is designed to steal sensitive information such as login credentials, credit card details, and other financial data from infected systems. The malware typically targets Windows-based computers.",
+        [
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.amadey",
+            "https://darktrace.com/blog/amadey-info-stealer-exploiting-n-day-vulnerabilities"
+        ]
+    ],
+    "active directory kerberos attacks": [
+        "Monitor for activities and techniques associated with Kerberos based attacks within with Active Directory environments.",
+        [
+            "https://en.wikipedia.org/wiki/Kerberos_(protocol)",
+            "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-kile/2a32282e-dd48-4ad9-a542-609804b02cc9",
+            "https://m0chan.github.io/2019/07/31/How-To-Attack-Kerberos-101.html",
+            "https://stealthbits.com/blog/cracking-active-directory-passwords-with-as-rep-roasting/",
+            "https://attack.mitre.org/techniques/T1558/003/",
+            "https://attack.mitre.org/techniques/T1550/003/",
+            "https://attack.mitre.org/techniques/T1558/004/"
+        ]
+    ],
+    "fortinet fortinac cve-2022-39952": [
+        "On Thursday, 16 February 2023, Fortinet released a PSIRT that details CVE-2022-39952, a critical vulnerability affecting its FortiNAC product (Horizon3.ai).",
+        [
+            "https://www.horizon3.ai/fortinet-fortinac-cve-2022-39952-deep-dive-and-iocs/",
+            "https://viz.greynoise.io/tag/fortinac-rce-attempt?days=30",
+            "https://www.bleepingcomputer.com/news/security/fortinet-fixes-critical-rce-flaws-in-fortinac-and-fortiweb/"
+        ]
+    ],
+    "azure active directory account takeover": [
+        "Monitor for activities and techniques associated with Account Takeover attacks against Azure Active Directory tenants.",
+        [
+            "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
+            "https://azure.microsoft.com/en-us/services/active-directory/#overview",
+            "https://attack.mitre.org/techniques/T1586/",
+            "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-compare-azure-ad-to-ad",
+            "https://www.imperva.com/learn/application-security/account-takeover-ato/",
+            "https://www.varonis.com/blog/azure-active-directory",
+            "https://www.barracuda.com/glossary/account-takeover"
+        ]
+    ],
+    "vmware aria operations vrealize cve-2023-20887": [
+        "CVE-2023-20887 is a critical vulnerability affecting VMware's vRealize Network Insight (also known as VMware Aria Operations for Networks). It allows a remote, unauthenticated attacker to execute arbitrary commands with root privileges via the Apache Thrift RPC interface. The exploit, which has a severity score of 9.8, targets an endpoint (\"/saas./resttosaasservlet\") in the application and delivers a malicious payload designed to create a reverse shell, granting the attacker control over the system. VMware has released an advisory recommending users to update to the latest version to mitigate this threat.",
+        [
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-20887",
+            "https://summoning.team/blog/vmware-vrealize-network-insight-rce-cve-2023-20887/",
+            "https://viz.greynoise.io/tag/VMware-aria-operations-for-networks-rce-attempt?days=30",
+            "https://github.com/sinsinology/CVE-2023-20887"
+        ]
+    ],
+    "cve-2022-40684 fortinet appliance auth bypass": [
+        "Fortinet recently patched a critical authentication bypass vulnerability in their FortiOS, FortiProxy, and FortiSwitchManager projects CVE-2022-40684.",
+        [
+            "https://www.wordfence.com/blog/2022/10/threat-advisory-cve-2022-40684-fortinet-appliance-auth-bypass/",
+            "https://www.horizon3.ai/fortios-fortiproxy-and-fortiswitchmanager-authentication-bypass-technical-deep-dive-cve-2022-40684/",
+            "https://github.com/horizon3ai/CVE-2022-40684",
+            "https://attackerkb.com/topics/QWOxGIKkGx/cve-2022-40684/rapid7-analysis",
+            "https://www.greynoise.io/blog/fortios-authentication-bypass"
+        ]
+    ],
+    "ivanti sentry authentication bypass cve-2023-38035": [
+        "A critical vulnerability, designated as CVE-2023-38035, has been identified in Ivanti Sentry (formerly MobileIron Sentry). It affects all supported versions, including 9.18, 9.17, and 9.16, as well as older versions. The vulnerability allows an unauthenticated attacker to access the System Manager Portal (typically hosted on port 8443) and make configuration changes, potentially executing OS commands as root. However, the risk is low for users who haven't exposed port 8443 online. This flaw is distinct from other Ivanti products. It's imperative for organizations to check for unrecognized HTTP requests to /services/* as a potential indicator of compromise.",
+        [
+            "https://github.com/horizon3ai/CVE-2023-38035/blob/main/CVE-2023-38035.py",
+            "https://www.horizon3.ai/ivanti-sentry-authentication-bypass-cve-2023-38035-deep-dive/",
+            "https://forums.ivanti.com/s/article/KB-API-Authentication-Bypass-on-Sentry-Administrator-Interface-CVE-2023-38035?language=en_US"
+        ]
+    ],
+    "dynamic dns": [
+        "Detect and investigate hosts in your environment that may be communicating with dynamic domain providers. Attackers may leverage these services to help them avoid firewall blocks and deny lists.",
+        [
+            "https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html",
+            "https://umbrella.cisco.com/blog/2013/04/15/on-the-trail-of-malicious-dynamic-dns-domains/",
+            "http://www.noip.com/blog/2014/07/11/dynamic-dns-can-use-2/",
+            "https://www.splunk.com/blog/2015/08/04/detecting-dynamic-dns-domains-in-splunk.html"
+        ]
+    ],
+    "azure active directory persistence": [
+        "Monitor for activities and techniques associated with the execution of Persistence techniques against Azure Active Directory tenants.",
+        [
+            "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
+            "https://azure.microsoft.com/en-us/services/active-directory/#overview",
+            "https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-compare-azure-ad-to-ad",
+            "https://attack.mitre.org/tactics/TA0003/",
+            "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/Persistence/"
+        ]
+    ],
+    "prestige ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the Prestige Ransomware",
+        [
+            "https://www.microsoft.com/en-us/security/blog/2022/10/14/new-prestige-ransomware-impacts-organizations-in-ukraine-and-poland/"
+        ]
+    ],
+    "acidrain": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the acidrain malware including deleting of files and etc. AcidRain is an ELF MIPS malware specifically designed to wipe modems and routers. The complete list of targeted devices is unknown at this time, but WatchGuard FireBox has specifically been listed as a target. This malware is capable of wiping and deleting non-standard linux files and overwriting storage device files that might related to router, ssd card and many more.",
+        [
+            "https://www.sentinelone.com/labs/acidrain-a-modem-wiper-rains-down-on-europe/"
+        ]
+    ],
+    "log4shell cve-2021-44228": [
+        "Log4Shell or CVE-2021-44228 is a Remote Code Execution (RCE) vulnerability in the Apache Log4j library, a widely used and ubiquitous logging framework for Java. The vulnerability allows an attacker who can control log messages to execute arbitrary code loaded from attacker-controlled servers and we anticipate that most apps using the Log4j library will meet this condition.",
+        [
+            "https://mbechler.github.io/2021/12/10/PSA_Log4Shell_JNDI_Injection/",
+            "https://www.fastly.com/blog/digging-deeper-into-log4shell-0day-rce-exploit-found-in-log4j",
+            "https://www.crowdstrike.com/blog/log4j2-vulnerability-analysis-and-mitigation-recommendations/",
+            "https://www.lunasec.io/docs/blog/log4j-zero-day/",
+            "https://www.splunk.com/en_us/blog/security/log-jammin-log4j-2-rce.html"
+        ]
+    ],
+    "suspicious regsvcs regasm activity": [
+        "Monitor and detect techniques used by attackers who leverage the mshta.exe process to execute malicious code.",
+        [
+            "https://attack.mitre.org/techniques/T1218/009/",
+            "https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/evasion/windows/applocker_evasion_regasm_regsvcs.md",
+            "https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/"
+        ]
+    ],
+    "suspicious cloud user activities": [
+        "Detect and investigate suspicious activities by users and roles in your cloud environments.",
+        [
+            "https://d0.awsstatic.com/whitepapers/aws-security-best-practices.pdf",
+            "https://redlock.io/blog/cryptojacking-tesla"
+        ]
+    ],
+    "cisco ios xe software web management user interface vulnerability": [
+        "Cisco has identified active exploitation of a previously unknown vulnerability in the Web User Interface (Web UI) feature of Cisco IOS XE software (CVE-2023-20198) when exposed to the internet or untrusted networks. Successful exploitation of this vulnerability allows an attacker to create an account on the affected device with privilege level 15 access, effectively granting them full control of the compromised device and allowing possible subsequent unauthorized activity.",
+        [
+            "https://blog.talosintelligence.com/active-exploitation-of-cisco-ios-xe-software/"
+        ]
+    ],
+    "gcp cross account activity": [
+        "Track when a user assumes an IAM role in another GCP account to obtain cross-account access to services and resources in that account. Accessing new roles could be an indication of malicious activity.",
+        [
+            "https://cloud.google.com/iam/docs/understanding-service-accounts"
+        ]
+    ],
+    "hermetic wiper": [
+        "This analytic story contains detections that allow security analysts to detect and investigate unusual activities that might relate to the destructive malware targeting Ukrainian organizations also known as \"Hermetic Wiper\". This analytic story looks for abuse of Regsvr32, executables written in administrative SMB Share, suspicious processes, disabling of memory crash dump and more.",
+        [
+            "https://www.sentinelone.com/labs/hermetic-wiper-ukraine-under-attack/",
+            "https://www.cisa.gov/uscert/ncas/alerts/aa22-057a"
+        ]
+    ],
+    "cisa aa23-347a": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might be related to the  SVR cyber activity tactics and techniques. While SVR followed a similar playbook in each compromise, they also adjusted to each operating environment and not all presented steps or actions below were executed on every host.",
+        [
+            "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-347a"
+        ]
+    ],
+    "graceful wipe out attack": [
+        "This analytic story contains detections that allow security analysts to detect and investigate unusual activities that might relate to the destructive attack or campaign found by \"THE DFIR Report\" that uses Truebot, FlawedGrace and MBR killer malware. This analytic story looks for suspicious dropped files, cobalt strike execution, im-packet execution, registry modification, scripts, persistence, lateral movement, impact, exfiltration and recon.",
+        [
+            "https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out/"
+        ]
+    ],
+    "windealer rat": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to Windealer Remote Access Trojan (RAT), a versatile malware used for data theft and unauthorized system control. Monitor for signs such as unexpected process token adjustment, abnormal file activity, and unauthorized process execution. Investigate indicators of command-and-control (C2) communications, particularly encrypted or obfuscated traffic patterns. Behavioral analysis and endpoint monitoring can help identify suspicious activities linked to this RAT. Early detection and thorough investigation are essential to mitigate the risks posed by Windealer.",
+        [
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.windealer"
+        ]
+    ],
+    "spring4shell cve-2022-22965": [
+        "Spring4Shell is the nickname given to a zero-day vulnerability in the Spring Core Framework, a programming and configuration model for Java-based enterprise applications.",
+        [
+            "https://www.tenable.com/blog/spring4shell-faq-spring-framework-remote-code-execution-vulnerability"
+        ]
+    ],
+    "azorult": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the Azorult malware including firewall modification, icacl execution, spawning more process, botnet c2 communication, defense evasion and etc. The AZORULT malware was first discovered in 2016 to be an information stealer that steals browsing history, cookies, ID/passwords, cryptocurrency information and more. It can also be a downloader of other malware. A variant of this malware was able to create a new, hidden administrator account on the machine to set a registry key to establish a Remote Desktop Protocol (RDP) connection. Exploit kits such as Fallout Exploit Kit (EK) and phishing mails with social engineering technique are one of the major infection vectors of the AZORult malware. The current malspam and phishing emails use fake product order requests, invoice documents and payment information requests. This Trojan-Spyware connects to Command And Control (C&C) servers of attacker to send and receive information.",
+        [
+            "https://success.trendmicro.com/dcx/s/solution/000146108-azorult-malware-information?language=en_US&sfdcIFrameOrigin=null",
+            "https://app.any.run/tasks/a6f2ffe2-e6e2-4396-ae2e-04ea0143f2d8/"
+        ]
+    ],
+    "critical alerts": [
+        "This analytic story contains detections that monitor critical alerts data from security tools ingested into Splunk. By correlating these alerts and enriching them with MITRE ATT&CK annotations and other risk events, it offers a nuanced perspective on potential threats and security posture of your organization.",
+        [
+            "https://docs.splunk.com/Documentation/CIM/5.3.2/User/Alerts",
+            "https://docs.splunk.com/Documentation/CIM/5.3.2/User/UsetheCAM"
+        ]
+    ],
+    "atlassian confluence server and data center cve-2022-26134": [
+        "On June 2, security researchers at Volexity published a blog outlining the discovery of an unauthenticated remote code execution zero day vulnerability (CVE-2022-26134) being actively exploited in Atlassian Confluence Server and Data Center instances in the wild. Atlassian released a fix within 24 hours of the blog''s release.",
+        [
+            "https://confluence.atlassian.com/doc/confluence-security-advisory-2022-06-02-1130377146.html",
+            "https://www.splunk.com/en_us/blog/security/atlassian-confluence-vulnerability-cve-2022-26134.html",
+            "https://www.rapid7.com/blog/post/2022/06/02/active-exploitation-of-confluence-cve-2022-26134/",
+            "https://www.volexity.com/blog/2022/06/02/zero-day-exploitation-of-atlassian-confluence/"
+        ]
+    ],
+    "scheduled tasks": [
+        "The MITRE ATT&CK technique T1053 refers to Scheduled Task/Job. Adversaries might use task scheduling utilities to execute programs or scripts at a predefined date and time. This method is often used for persistence but can also be used for privilege escalation or to execute tasks under certain conditions. Scheduling tasks can be beneficial for an attacker as it can allow them to execute actions at times when the system is less likely to be monitored actively. Different operating systems have different utilities for task scheduling, for example, Unix-like systems have Cron, while Windows has Scheduled Tasks and At Jobs.",
+        [
+            "https://attack.mitre.org/techniques/T1053/"
+        ]
+    ],
+    "windows service abuse": [
+        "Windows services are often used by attackers for persistence and the ability to load drivers or otherwise interact with the Windows kernel. This Analytic Story helps you monitor your environment for indications that Windows services are being modified or created in a suspicious manner.",
+        [
+            "https://attack.mitre.org/wiki/Technique/T1050",
+            "https://attack.mitre.org/wiki/Technique/T1031"
+        ]
+    ],
+    "okta mfa exhaustion": [
+        "A social engineering technique called 'MFA Fatigue', aka 'MFA push spam' or 'MFA Exhaustion', is growing more popular with threat actors as it does not require malware or phishing infrastructure and has proven to be successful in attacks.",
+        [
+            "https://www.bleepingcomputer.com/news/security/mfa-fatigue-hackers-new-favorite-tactic-in-high-profile-breaches/",
+            "https://www.csoonline.com/article/3674156/multi-factor-authentication-fatigue-attacks-are-on-the-rise-how-to-defend-against-them.html"
+        ]
+    ],
+    "plugx": [
+        "PlugX, also referred to as \"PlugX RAT\" or \"Kaba,\" is a highly sophisticated remote access Trojan (RAT) discovered in 2012. This malware is notorious for its involvement in targeted cyberattacks, primarily driven by cyber espionage objectives. PlugX provides attackers with comprehensive remote control capabilities over compromised systems, granting them the ability to execute commands, collect sensitive data, and manipulate the infected host.",
+        [
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.plugx",
+            "https://blog.sekoia.io/my-teas-not-cold-an-overview-of-china-cyber-threat/",
+            "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/carderbee-software-supply-chain-certificate-abuse",
+            "https://go.recordedfuture.com/hubfs/reports/cta-2023-0808.pdf",
+            "https://www.mandiant.com/resources/blog/infected-usb-steal-secrets",
+            "https://attack.mitre.org/software/S0013/"
+        ]
+    ],
+    "suspicious cloud provisioning activities": [
+        "Monitor your cloud infrastructure provisioning activities for behaviors originating from unfamiliar or unusual locations. These behaviors may indicate that malicious activities are occurring somewhere within your cloud environment.",
+        [
+            "https://d0.awsstatic.com/whitepapers/aws-security-best-practices.pdf"
+        ]
+    ],
+    "swift slicer": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the swift slicer malware including overwriting of files and etc.",
+        [
+            "https://twitter.com/ESETresearch/status/1618960022150729728",
+            "https://www.welivesecurity.com/2023/01/27/swiftslicer-new-destructive-wiper-malware-ukraine/"
+        ]
+    ],
+    "flax typhoon": [
+        "Microsoft has identified a nation-state activity group, Flax Typhoon, based in China, targeting Taiwanese organizations for espionage. The group maintains long-term access to networks with minimal use of malware, relying on built-in OS tools and benign software. The group's activities are primarily focused on Taiwan, but the techniques used could be easily reused in other operations outside the region. Microsoft has not observed Flax Typhoon using this access to conduct additional actions.",
+        [
+            "https://www.microsoft.com/en-us/security/blog/2023/08/24/flax-typhoon-using-legitimate-software-to-quietly-access-taiwanese-organizations/"
+        ]
+    ],
+    "data exfiltration": [
+        "Data exfiltration refers to the unauthorized transfer or extraction of sensitive or valuable data from a compromised system or network during a cyber attack. It is a critical phase in many targeted attacks, where adversaries aim to steal confidential information, such as intellectual property, financial records, personal data, or trade secrets.",
+        [
+            "https://attack.mitre.org/tactics/TA0010/",
+            "https://bleemb.medium.com/data-exfiltration-with-native-aws-s3-features-c94ae4d13436",
+            "https://labs.nettitude.com/blog/how-to-exfiltrate-aws-ec2-data/",
+            "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-277a"
+        ]
+    ],
+    "possible backdoor activity associated with mudcarp espionage campaigns": [
+        "Monitor your environment for suspicious behaviors that resemble the techniques employed by the MUDCARP threat group.",
+        [
+            "https://www.infosecurity-magazine.com/news/scope-of-mudcarp-attacks-highlight-1/",
+            "http://blog.amossys.fr/badflick-is-not-so-bad.html"
+        ]
+    ],
+    "blackmatter ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the BlackMatter ransomware, including looking for file writes associated with BlackMatter, force safe mode boot, autadminlogon account registry modification and more.",
+        [
+            "https://news.sophos.com/en-us/2021/08/09/blackmatter-ransomware-emerges-from-the-shadow-of-darkside/",
+            "https://www.bleepingcomputer.com/news/security/blackmatter-ransomware-gang-rises-from-the-ashes-of-darkside-revil/",
+            "https://blog.malwarebytes.com/ransomware/2021/07/blackmatter-a-new-ransomware-group-claims-link-to-darkside-revil/"
+        ]
+    ],
+    "active directory discovery": [
+        "Monitor for activities and techniques associated with Discovery and Reconnaissance within with Active Directory environments.",
+        [
+            "https://attack.mitre.org/tactics/TA0007/",
+            "https://adsecurity.org/?p=2535",
+            "https://attack.mitre.org/techniques/T1087/001/",
+            "https://attack.mitre.org/techniques/T1087/002/",
+            "https://attack.mitre.org/techniques/T1087/003/",
+            "https://attack.mitre.org/techniques/T1482/",
+            "https://attack.mitre.org/techniques/T1201/",
+            "https://attack.mitre.org/techniques/T1069/001/",
+            "https://attack.mitre.org/techniques/T1069/002/",
+            "https://attack.mitre.org/techniques/T1018/",
+            "https://attack.mitre.org/techniques/T1049/",
+            "https://attack.mitre.org/techniques/T1033/"
+        ]
+    ],
+    "proxyshell": [
+        "ProxyShell is a chain of exploits targeting on-premise Microsoft Exchange Server - CVE-2021-34473, CVE-2021-34523, and CVE-2021-31207.",
+        [
+            "https://y4y.space/2021/08/12/my-steps-of-reproducing-proxyshell/",
+            "https://www.zerodayinitiative.com/blog/2021/8/17/from-pwn2own-2021-a-new-attack-surface-on-microsoft-exchange-proxyshell",
+            "https://www.youtube.com/watch?v=FC6iHw258RI",
+            "https://www.huntress.com/blog/rapid-response-microsoft-exchange-servers-still-vulnerable-to-proxyshell-exploit#what-should-you-do",
+            "https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-ProxyLogon-Is-Just-The-Tip-Of-The-Iceberg-A-New-Attack-Surface-On-Microsoft-Exchange-Server.pdf",
+            "https://www.inversecos.com/2022/07/hunting-for-apt-abuse-of-exchange.html"
+        ]
+    ],
+    "kubernetes sensitive object access activity": [
+        "This story addresses detection and response of accounts acccesing Kubernetes cluster sensitive objects such as configmaps or secrets providing information on items such as user user, group. object, namespace and authorization reason.",
+        [
+            "https://www.splunk.com/en_us/blog/security/approaching-kubernetes-security-detecting-kubernetes-scan-with-splunk.html"
+        ]
+    ],
+    "suspicious aws login activities": [
+        "Monitor your AWS authentication events using your CloudTrail logs. Searches within this Analytic Story will help you stay aware of and investigate suspicious logins.",
+        [
+            "https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html"
+        ]
+    ],
+    "double zero destructor": [
+        "Double Zero Destructor is a destructive payload that enumerates Domain Controllers and executes killswitch if detected. Overwrites files with Zero blocks or using MS Windows API calls such as NtFileOpen, NtFSControlFile. This payload also deletes registry hives HKCU,HKLM, HKU, HKLM BCD.",
+        [
+            "https://cert.gov.ua/article/38088",
+            "https://blog.talosintelligence.com/2022/03/threat-advisory-doublezero.html"
+        ]
+    ],
+    "windows file extension and association abuse": [
+        "Detect and investigate suspected abuse of file extensions and Windows file associations. Some of the malicious behaviors involved may include inserting spaces before file extensions or prepending the file extension with a different one, among other techniques.",
+        [
+            "https://blog.malwarebytes.com/cybercrime/2013/12/file-extensions-2/",
+            "https://attack.mitre.org/wiki/Technique/T1042"
+        ]
+    ],
+    "github malicious activity": [
+        "Leverage searches that allow you to detect and investigate suspicious GitHub activities that might indicate malicious behavior, including pull requests from unknown users, disabled security workflows, and other potentially harmful repository modifications. These detections help identify attempts to compromise repositories through unauthorized code changes, bypassed security controls, and other suspicious actions that could lead to supply chain attacks or data breaches.",
+        [
+            "https://www.googlecloudcommunity.com/gc/Community-Blog/Monitoring-for-Suspicious-GitHub-Activity-with-Google-Security/ba-p/763610"
+        ]
+    ],
+    "signed binary proxy execution installutil": [
+        "Adversaries may use InstallUtil to proxy execution of code through a trusted Windows utility.",
+        [
+            "https://attack.mitre.org/techniques/T1218/004/",
+            "https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1218.004/T1218.004.md"
+        ]
+    ],
+    "cve-2023-21716 word rtf heap corruption": [
+        "A proof-of-concept for CVE-2023-21716, a critical vulnerability in Microsoft Word that allows remote code execution utilizing a heap corruption in rich text files.",
+        [
+            "https://www.bleepingcomputer.com/news/security/proof-of-concept-released-for-critical-microsoft-word-rce-bug/"
+        ]
+    ],
+    "derusbi": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to Derusbi malware, a sophisticated threat often linked to advanced persistent attacks. Monitor anomalies in network traffic, file execution patterns, and unauthorized access attempts to uncover potential compromises. Utilize behavioral analytics and endpoint detection tools to identify indicators such as pesistence, service creation, lateral movement via removable drive, driver loading and dll side loading. By correlating these findings with known threat intelligence, you can quickly respond to and mitigate Derusbi-related incidents.",
+        [
+            "https://www.virusbulletin.com/uploads/pdf/conference_slides/2015/Pun-etal-VB2015.pdf",
+            "https://www.trendmicro.com/en_us/research/21/g/biopass-rat-new-malware-sniffs-victims-via-live-streaming.html",
+            "https://web.archive.org/web/20180310053107/https://www.rsaconference.com/writable/presentations/file_upload/hta-w02-dissecting-derusbi.pdf"
+        ]
+    ],
+    "malicious powershell": [
+        "Attackers are finding stealthy ways \"live off the land,\" leveraging utilities and tools that come standard on the endpoint--such as PowerShell--to achieve their goals without downloading binary files. These searches can help you detect and investigate PowerShell command-line options that may be indicative of malicious intent.",
+        [
+            "https://blogs.mcafee.com/mcafee-labs/malware-employs-powershell-to-infect-systems/",
+            "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/"
+        ]
+    ],
+    "suspicious dns traffic": [
+        "Attackers often attempt to hide within or otherwise abuse the domain name system (DNS). You can thwart attempts to manipulate this omnipresent protocol by monitoring for these types of abuses.",
+        [
+            "http://blogs.splunk.com/2015/10/01/random-words-on-entropy-and-dns/",
+            "http://www.darkreading.com/analytics/security-monitoring/got-malware-three-signs-revealed-in-dns-traffic/d/d-id/1139680",
+            "https://live.paloaltonetworks.com/t5/Threat-Vulnerability-Articles/What-are-suspicious-DNS-queries/ta-p/71454"
+        ]
+    ],
+    "shrinklocker": [
+        "ShrinkLocker is a new ransomware that uses Windows BitLocker to encrypt files by creating new boot partitions. It targets non-boot partitions, shrinks them, and creates new boot volumes. ShrinkLocker has attacked a government entity and companies in the vaccine and manufacturing sectors. The ransomware doesn't drop a ransom note but uses the boot partition label to provide contact emails for the attackers. Kaspersky researchers emphasize secure recovery key storage and offline backups to mitigate such threats.",
+        [
+            "https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/",
+            "https://www.techradar.com/pro/security/a-new-ransomware-is-hijacking-windows-bitlocker-to-encrypt-and-steal-files",
+            "https://www.bleepingcomputer.com/news/security/new-shrinklocker-ransomware-uses-bitlocker-to-encrypt-your-files/",
+            "https://securelist.com/ransomware-abuses-bitlocker/112643/"
+        ]
+    ],
+    "compromised user account": [
+        "Monitor for activities and techniques associated with Compromised User Account attacks.",
+        [
+            "https://www.proofpoint.com/us/threat-reference/compromised-account"
+        ]
+    ],
+    "aws cross account activity": [
+        "Track when a user assumes an IAM role in another AWS account to obtain cross-account access to services and resources in that account. Accessing new roles could be an indication of malicious activity.",
+        [
+            "https://aws.amazon.com/blogs/security/aws-cloudtrail-now-tracks-cross-account-activity-to-its-origin/"
+        ]
+    ],
+    "suspicious gcp storage activities": [
+        "Use the searches in this Analytic Story to monitor your GCP Storage buckets for evidence of anomalous activity and suspicious behaviors, such as detecting open storage buckets and buckets being accessed from a new IP. The contextual and investigative searches will give you more information, when required.",
+        [
+            "https://cloud.google.com/blog/products/gcp/4-steps-for-hardening-your-cloud-storage-buckets-taking-charge-of-your-security",
+            "https://rhinosecuritylabs.com/gcp/google-cloud-platform-gcp-bucket-enumeration/"
+        ]
+    ],
+    "windows bootkits": [
+        "Adversaries may use bootkits to persist on systems. Bootkits reside at a layer below the operating system and may make it difficult to perform full remediation unless an organization suspects one was used and can act accordingly.",
+        [
+            "https://www.microsoft.com/en-us/security/blog/2023/04/11/guidance-for-investigating-attacks-using-cve-2022-21894-the-blacklotus-campaign/",
+            "https://www.welivesecurity.com/2023/03/01/blacklotus-uefi-bootkit-myth-confirmed/"
+        ]
+    ],
+    "asset tracking": [
+        "Keep a careful inventory of every asset on your network to make it easier to detect rogue devices. Unauthorized/unmanaged devices could be an indication of malicious behavior that should be investigated further.",
+        [
+            "https://www.cisecurity.org/controls/inventory-of-authorized-and-unauthorized-devices/"
+        ]
+    ],
+    "office 365 persistence mechanisms": [
+        "Monitor for activities and anomalies indicative of potential persistence techniques within Office 365 environments.",
+        [
+            "https://attack.mitre.org/tactics/TA0003/",
+            "https://www.fireeye.com/content/dam/fireeye-www/blog/pdfs/wp-m-unc2452-2021-000343-01.pdf",
+            "https://www.cisa.gov/uscert/ncas/alerts/aa21-008a",
+            "https://www.splunk.com/en_us/blog/security/a-golden-saml-journey-solarwinds-continued.html",
+            "https://blog.sygnia.co/detection-and-hunting-of-golden-saml-attack?hsLang=en",
+            "https://www.mandiant.com/sites/default/files/2022-08/remediation-hardening-strategies-for-m365-defend-against-apt29-white-paper.pdf",
+            "https://www.csoonline.com/article/570381/microsoft-365-advanced-audit-what-you-need-to-know.html",
+            "https://learn.microsoft.com/en-us/azure/active-directory/manage-apps/overview-assign-app-owners",
+            "https://i.blackhat.com/USA-20/Thursday/us-20-Bienstock-My-Cloud-Is-APTs-Cloud-Investigating-And-Defending-Office-365.pdf"
+        ]
+    ],
+    "cloud federated credential abuse": [
+        "This analytical story addresses events that indicate abuse of cloud federated credentials. These credentials are usually extracted from endpoint desktop or servers specially those servers that provide federation services such as Windows Active Directory Federation Services. Identity Federation relies on objects such as Oauth2 tokens, cookies or SAML assertions in order to provide seamless access between cloud and perimeter environments. If these objects are either hijacked or forged then attackers will be able to pivot into victim's cloud environements.",
+        [
+            "https://www.cyberark.com/resources/threat-research-blog/golden-saml-newly-discovered-attack-technique-forges-authentication-to-cloud-apps",
+            "https://www.fireeye.com/content/dam/fireeye-www/blog/pdfs/wp-m-unc2452-2021-000343-01.pdf",
+            "https://us-cert.cisa.gov/ncas/alerts/aa21-008a"
+        ]
+    ],
+    "active directory privilege escalation": [
+        "Monitor for activities and techniques associated with Privilege Escalation attacks within Active Directory environments.",
+        [
+            "https://attack.mitre.org/tactics/TA0004/",
+            "https://adsecurity.org/?p=3658",
+            "https://adsecurity.org/?p=2362"
+        ]
+    ],
+    "proxynotshell": [
+        "Two new zero day Microsoft Exchange vulnerabilities have been identified actively exploited in the wild - CVE-2022-41040 and CVE-2022-41082.",
+        [
+            "https://msrc-blog.microsoft.com/2022/09/29/customer-guidance-for-reported-zero-day-vulnerabilities-in-microsoft-exchange-server/",
+            "https://twitter.com/GossiTheDog/status/1575762721353916417?s=20&t=67gq9xCWuyPm1VEm8ydfyA",
+            "https://twitter.com/cglyer/status/1575793769814728705?s=20&t=67gq9xCWuyPm1VEm8ydfyA",
+            "https://www.gteltsc.vn/blog/warning-new-attack-campaign-utilized-a-new-0day-rce-vulnerability-on-microsoft-exchange-server-12715.html",
+            "https://research.splunk.com/stories/proxyshell/",
+            "https://www.inversecos.com/2022/07/hunting-for-apt-abuse-of-exchange.html"
+        ]
+    ],
+    "hafnium group": [
+        "HAFNIUM group was identified by Microsoft as exploiting 4 Microsoft Exchange CVEs in the wild - CVE-2021-26855, CVE-2021-26857, CVE-2021-26858 and CVE-2021-27065.",
+        [
+            "https://www.splunk.com/en_us/blog/security/detecting-hafnium-exchange-server-zero-day-activity-in-splunk.html",
+            "https://www.volexity.com/blog/2021/03/02/active-exploitation-of-microsoft-exchange-zero-day-vulnerabilities/",
+            "https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/",
+            "https://blog.rapid7.com/2021/03/03/rapid7s-insightidr-enables-detection-and-response-to-microsoft-exchange-0-day/"
+        ]
+    ],
+    "cleo file transfer software": [
+        "This analytic story addresses the exploitation of Cleo file transfer software products (LexiCom, VLTrader, and Harmony) through CVE-2024-50623. This vulnerability allows unauthenticated attackers to execute arbitrary system commands through the web interface, potentially leading to remote code execution and system compromise.",
+        [
+            "https://www.rapid7.com/blog/post/2024/12/10/etr-widespread-exploitation-of-cleo-file-transfer-software-cve-2024-50623/",
+            "https://www.huntress.com/blog/threat-advisory-oh-no-cleo-cleo-software-actively-being-exploited-in-the-wild"
+        ]
+    ],
+    "suspicious command-line executions": [
+        "Leveraging the Windows command-line interface (CLI) is one of the most common attack techniques--one that is also detailed in the MITRE ATT&CK framework. Use this Analytic Story to help you identify unusual or suspicious use of the CLI on Windows systems.",
+        [
+            "https://attack.mitre.org/wiki/Technique/T1059",
+            "https://www.microsoft.com/en-us/wdsi/threats/macro-malware",
+            "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
+        ]
+    ],
+    "unusual processes": [
+        "Quickly identify systems running new or unusual processes in your environment that could be indicators of suspicious activity. Processes run from unusual locations, those with conspicuously long command lines, and rare executables are all examples of activities that may warrant deeper investigation.",
+        [
+            "https://web.archive.org/web/20210921093439/https://www.fireeye.com/blog/threat-research/2017/08/monitoring-windows-console-activity-part-two.html",
+            "https://www.splunk.com/pdfs/technical-briefs/advanced-threat-detection-and-response-tech-brief.pdf",
+            "https://www.sans.org/reading-room/whitepapers/logging/detecting-security-incidents-windows-workstation-event-logs-34262"
+        ]
+    ],
+    "reverse network proxy": [
+        "The following analytic story describes applications that may be abused to reverse proxy back into an organization, either for persistence or remote access.",
+        [
+            "https://attack.mitre.org/software/S0508/",
+            "https://www.cisa.gov/uscert/sites/default/files/publications/aa22-320a_joint_csa_iranian_government-sponsored_apt_actors_compromise_federal%20network_deploy_crypto%20miner_credential_harvester.pdf"
+        ]
+    ],
+    "aws iam privilege escalation": [
+        "This analytic story contains detections that query your AWS Cloudtrail for activities related to privilege escalation.",
+        [
+            "https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/",
+            "https://www.cyberark.com/resources/threat-research-blog/the-cloud-shadow-admin-threat-10-permissions-to-protect",
+            "https://labs.bishopfox.com/tech-blog/privilege-escalation-in-aws"
+        ]
+    ],
+    "xorddos": [
+        "XorDdos is a sophisticated Linux malware that compromises devices to conduct high-capacity Distributed Denial of Service (DDoS) attacks. It employs XOR-based encryption to conceal its communications and utilizes rootkit capabilities to evade detection. The malware typically infiltrates systems through brute-force attacks on SSH services, enabling unauthorized access. Once installed, it can launch DDoS attacks exceeding 150 Gbps. To detect XorDdos, monitor for unusual network traffic patterns, unexpected processes, and unauthorized access attempts. Implementing strong, unique passwords and regularly updating system security measures are essential to mitigate the risk of infection.",
+        [
+            "https://www.securityweek.com/linux-xor-ddos-botnet-flexes-muscles-150-gbps-attacks/",
+            "https://www.microsoft.com/en-us/security/blog/2022/05/19/rise-in-xorddos-a-deeper-look-at-the-stealthy-ddos-malware-targeting-linux-devices/",
+            "https://securityintelligence.com/news/xor-ddos-attack-tool-being-used-to-launch-over-20-daily-attacks/?utm_source=chatgpt.com",
+            "https://unit42.paloaltonetworks.com/new-linux-xorddos-trojan-campaign-delivers-malware/"
+        ]
+    ],
+    "china-nexus threat activity": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to Nexus, Chinese state-nexus adversaries known for its stealth and strategic targeting of high-value sectors. Monitor for indicators such as spear-phishing campaigns, exploitation of zero-day vulnerabilities, and unauthorized lateral movement within your network. Investigate anomalous data exfiltration, encrypted communications, and behaviors aligning with their known tactics, techniques, and procedures (TTPs). Combining threat intelligence with real-time monitoring helps identify and respond to Nexus APT activity, minimizing potential damage and data loss.",
+        [
+            "https://news.sophos.com/en-us/2024/10/31/pacific-rim-neutralizing-china-based-threat/",
+            "https://www.wsj.com/tech/cybersecurity/typhoon-china-hackers-military-weapons-97d4ef95?st=oe1KKi&reflink=desktopwebshare _permalink",
+            "https://www.judiciary.senate.gov/imo/media/doc/2024-11-19_pm_-_testimony_-_meyers.pdf",
+            "https://go.crowdstrike.com/rs/281-OBQ-266/images/GlobalThreatReport2024.pdf",
+            "https://www.crowdstrike.com/adversaries/envoy-panda/"
+        ]
+    ],
+    "darkside ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the DarkSide Ransomware",
+        [
+            "https://www.splunk.com/en_us/blog/security/the-darkside-of-the-ransomware-pipeline.htmlbig-game-hunting-with-ryuk-another-lucrative-targeted-ransomware/",
+            "https://www.mandiant.com/resources/shining-a-light-on-darkside-ransomware-operations"
+        ]
+    ],
+    "collection and staging": [
+        "Monitor for and investigate activities--such as suspicious writes to the Windows Recycling Bin or email servers sending high amounts of traffic to specific hosts, for example--that may indicate that an adversary is harvesting and exfiltrating sensitive data.",
+        [
+            "https://attack.mitre.org/wiki/Collection",
+            "https://attack.mitre.org/wiki/Technique/T1074"
+        ]
+    ],
+    "defense evasion or unauthorized access via sddl tampering": [
+        "This analytic story focuses on detecting potential defense evasion or unauthorized access attempts through tampering with Security Descriptor Definition Language (SDDL) settings. Attackers may modify SDDL configurations to alter permissions on critical system components, such as event logs and services, to obscure their activities or gain unauthorized access. This story includes detections for changes to 'ChannelAccess' and 'CustomSD' registry values, as well as the use of tools like 'sc.exe sdset', 'icacls' and 'subinacl' to modify securable objects (files, registry, services, etc) permissions.",
+        [
+            "https://web.archive.org/web/20220710181255/https://blog.minerva-labs.com/lockbit-3.0-aka-lockbit-black-is-here-with-a-new-icon-new-ransom-note-new-wallpaper-but-less-evasiveness",
+            "https://learn.microsoft.com/en-us/troubleshoot/windows-server/group-policy/set-event-log-security-locally-or-via-group-policy",
+            "https://0xv1n.github.io/posts/scmanager/",
+            "https://www.sans.org/blog/red-team-tactics-hiding-windows-services/",
+            "https://news.sophos.com/wp-content/uploads/2020/06/glupteba_final-1.pdf",
+            "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/cyber-year-in-retrospect/yir-cyber-threats-report-download.pdf",
+            "https://www.welivesecurity.com/en/eset-research/romcom-exploits-firefox-and-windows-zero-days-in-the-wild/"
+        ]
+    ],
+    "caddy wiper": [
+        "Caddy Wiper is a destructive payload that detects if its running on a Domain Controller and executes killswitch if detected. If not in a DC it destroys Users and subsequent mapped drives. This wiper also destroys drive partitions inculding boot partitions.",
+        [
+            "https://twitter.com/ESETresearch/status/1503436420886712321",
+            "https://www.welivesecurity.com/2022/03/15/caddywiper-new-wiper-malware-discovered-ukraine/"
+        ]
+    ],
+    "pxa stealer": [
+        "This following analytic story contains detections related to the PXA Stealer, a malicious software tool designed to covertly extract sensitive information from infected systems. This data-stealing malware targets credentials, personal data, browsing information, and financial information by exploiting system vulnerabilities or tricking users into downloading it via phishing campaigns or malicious links. PXA Stealer often operates stealthily, bypassing security measures and transmitting stolen data to cybercriminals. Its capabilities make it a significant threat to individuals and organizations, emphasizing the need for robust cybersecurity defenses and awareness.",
+        [
+            "https://blog.talosintelligence.com/new-pxa-stealer/"
+        ]
+    ],
+    "crypto stealer": [
+        "Crypto Stealer is a malware strain designed to exfiltrate cryptocurrency-related data from compromised systems. It scans the infected machine for wallet files, clipboard activity, and other cryptocurrency artifacts, focusing on intercepting sensitive information like private keys or transaction details. The malware communicates with a command-and-control (C2) server to transmit the harvested data and can dynamically adapt its behavior based on instructions received. Detection indicators include unusual network activity to suspicious IP addresses, unauthorized file access targeting cryptocurrency wallet directories, and anomalous clipboard usage associated with cryptocurrency strings (e.g., wallet addresses). Security solutions should monitor for these behaviors and implement heuristic analysis to identify deviations from normal system operations. Users are encouraged to maintain updated endpoint protection and avoid downloading files from untrusted sources to mitigate the risk posed by Crypto Stealer.",
+        []
+    ],
+    "darkcrystal rat": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the DcRat malware including ddos, spawning more process, botnet c2 communication, defense evasion and etc. The DcRat malware is known commercial backdoor that was first released in 2018. This tool was sold in underground forum and known to be one of the cheapest commercial RATs. DcRat is modular and bespoke plugin framework make it a very flexible option, helpful for a range of nefearious uses.",
+        [
+            "https://www.mandiant.com/resources/analyzing-dark-crystal-rat-backdoor",
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.dcrat"
+        ]
+    ],
+    "ivanti epmm remote unauthenticated access": [
+        "Ivanti, a leading technology company, has disclosed two critical zero-day vulnerabilities in its Endpoint Manager Mobile (EPMM) product, CVE-2023-35078 and CVE-2023-35081. A recent update concerning CVE-2023-35082, closely related to CVE-2023-35078, reveals its impact on more versions of Ivanti's software than initially believed. The former allows unauthenticated attackers to obtain sensitive data, modify servers, and access the API, potentially leading to data breaches or malicious system modifications. Meanwhile, CVE-2023-35081 lets authenticated administrators remotely write arbitrary files to the server. Both vulnerabilities have been exploited in targeted attacks against government ministries and could be used in conjunction. With the presence of PoC code for CVE-2023-35078, the risk of broader exploitation has increased. While initially leveraged in limited attacks, the exploitation is expected to rise, possibly involving state-sponsored actors. Organizations are urged to apply immediate patches and conduct regular system assessments to ensure security.",
+        [
+            "https://www.securityweek.com/second-ivanti-epmm-zero-day-vulnerability-exploited-in-targeted-attacks/",
+            "https://www.cisa.gov/news-events/alerts/2023/07/28/ivanti-releases-security-updates-epmm-address-cve-2023-35081",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-35078",
+            "https://forums.ivanti.com/s/article/CVE-2023-35078-Remote-unauthenticated-API-access-vulnerability?language=en_US"
+        ]
+    ],
+    "windows audit policy tampering": [
+        "Adversaries often attempt to manipulate Windows audit policies to disable or suppress logging, allowing malicious activities to go undetected. This analytic story covers groups searches that are designed to monitor and detect suspicious actions involving `auditpol.exe` or other methods used to modify, clear, or remove audit policy configurations.",
+        [
+            "https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/",
+            "https://www.cybereason.com/blog/research/prometei-botnet-exploiting-microsoft-exchange-vulnerabilities",
+            "https://attack.mitre.org/techniques/T1562/002/",
+            "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/auditpol-clear",
+            "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/auditpol-remove"
+        ]
+    ],
+    "cisa aa22-320a": [
+        "CISA and the FBI have identified an APT activity where the adversary gained initial access via Log4Shell via a unpatched VMware Horizon server. From there the adversary moved laterally and continued to its objective.",
+        [
+            "https://www.cisa.gov/uscert/ncas/alerts/aa22-320a",
+            "https://www.cisa.gov/uscert/sites/default/files/publications/aa22-320a_joint_csa_iranian_government-sponsored_apt_actors_compromise_federal%20network_deploy_crypto%20miner_credential_harvester.pdf"
+        ]
+    ],
+    "bits jobs": [
+        "Adversaries may abuse BITS jobs to persistently execute or clean up after malicious payloads.",
+        [
+            "https://attack.mitre.org/techniques/T1197/",
+            "https://docs.microsoft.com/en-us/windows/win32/bits/bitsadmin-tool"
+        ]
+    ],
+    "braodo stealer": [
+        "Leverage searches that allow you to detect and investigate unusual activities that may be related to the Braodo Stealer malware, a malicious software designed to steal sensitive information from infected systems. This malware typically targets login credentials, browser history, cookies, and stored passwords. Braodo Stealer often infiltrates through phishing campaigns or malicious downloads, enabling attackers to gain unauthorized access to personal and financial data. By monitoring unusual system behaviors, such as unauthorized network connections or data exfiltration, you can help prevent data breaches and mitigate the impact of this threat.",
+        [
+            "https://bazaar.abuse.ch/browse/tag/Braodo/",
+            "https://g0njxa.medium.com/from-vietnam-to-united-states-malware-fraud-and-dropshipping-98b7a7b2c36d"
+        ]
+    ],
+    "data destruction": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the data destruction, including deleting files, overwriting files, wiping disk and unrecoverable file encryption. This analytic story may cover several known activities related to malware implants used in geo-political war to wipe disks or files to interrupt the network-wide operation of a targeted organization. Analytics can detect the behavior of \"DoubleZero Destructor\", \"CaddyWiper\", \"AcidRain\", \"AwfulShred\", \"Hermetic Wiper\", \"Swift Slicer\", \"Whisper Gate\" and many more.",
+        [
+            "https://attack.mitre.org/techniques/T1485/",
+            "https://researchcenter.paloaltonetworks.com/2018/09/unit42-xbash-combines-botnet-ransomware-coinmining-worm-targets-linux-windows/",
+            "https://www.picussecurity.com/blog/a-brief-history-and-further-technical-analysis-of-sodinokibi-ransomware",
+            "https://www.splunk.com/en_us/blog/security/threat-advisory-strt-ta02-destructive-software.html",
+            "https://www.splunk.com/en_us/blog/security/detecting-hermeticwiper.html",
+            "https://www.splunk.com/en_us/blog/security/threat-update-doublezero-destructor.html",
+            "https://www.splunk.com/en_us/blog/security/threat-update-caddywiper.html",
+            "https://www.splunk.com/en_us/blog/security/strt-ta03-cpe-destructive-software.html",
+            "https://www.splunk.com/en_us/blog/security/threat-update-cyclopsblink.html",
+            "https://www.splunk.com/en_us/blog/security/threat-update-acidrain-wiper.html",
+            "https://www.splunk.com/en_us/blog/security/threat-update-industroyer2.html",
+            "https://www.splunk.com/en_us/blog/security/threat-advisory-swiftslicer-wiper-strt-ta03.html"
+        ]
+    ],
+    "industroyer2": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the Industroyer2 attack, including file writes associated with its payload, lateral movement, persistence, privilege escalation and data destruction.",
+        [
+            "https://cert.gov.ua/article/39518",
+            "https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/"
+        ]
+    ],
+    "cloud cryptomining": [
+        "Monitor your cloud compute instances for activities related to cryptojacking/cryptomining. New instances that originate from previously unseen regions, users who launch abnormally high numbers of instances, or compute instances started by previously unseen users are just a few examples of potentially malicious behavior.",
+        [
+            "https://d0.awsstatic.com/whitepapers/aws-security-best-practices.pdf"
+        ]
+    ],
+    "data protection": [
+        "Fortify your data-protection arsenal--while continuing to ensure data confidentiality and integrity--with searches that monitor for and help you investigate possible signs of data exfiltration.",
+        [
+            "https://www.cisecurity.org/controls/data-protection/",
+            "https://www.sans.org/reading-room/whitepapers/dns/splunk-detect-dns-tunneling-37022",
+            "https://umbrella.cisco.com/blog/2013/04/15/on-the-trail-of-malicious-dynamic-dns-domains/"
+        ]
+    ],
+    "credential dumping": [
+        "Uncover activity consistent with credential dumping, a technique wherein attackers compromise systems and attempt to obtain and exfiltrate passwords. The threat actors use these pilfered credentials to further escalate privileges and spread throughout a target environment. The included searches in this Analytic Story are designed to identify attempts to credential dumping.",
+        [
+            "https://attack.mitre.org/wiki/Technique/T1003",
+            "https://cyberwardog.blogspot.com/2017/03/chronicles-of-threat-hunter-hunting-for.html"
+        ]
+    ],
+    "router and infrastructure security": [
+        "Validate the security configuration of network infrastructure and verify that only authorized users and systems are accessing critical assets. Core routing and switching infrastructure are common strategic targets for attackers.",
+        [
+            "https://web.archive.org/web/20210420020040/https://www.fireeye.com/blog/executive-perspective/2015/09/the_new_route_toper.html",
+            "https://www.cisco.com/c/en/us/about/security-center/event-response/synful-knock.html"
+        ]
+    ],
+    "winter vivern": [
+        "Utilize searches that enable you to detect and investigate unusual activities potentially related to the Winter Vivern malicious software. This includes examining multiple timeout executions, scheduled task creations, screenshots, and downloading files through PowerShell, among other indicators.",
+        [
+            "https://cert.gov.ua/article/3761023"
+        ]
+    ],
+    "suspicious zoom child processes": [
+        "Attackers are using Zoom as an vector to increase privileges on a sytems. This story detects new child processes of zoom and provides investigative actions for this detection.",
+        [
+            "https://blog.rapid7.com/2020/04/02/dispelling-zoom-bugbears-what-you-need-to-know-about-the-latest-zoom-vulnerabilities/",
+            "https://threatpost.com/two-zoom-zero-day-flaws-uncovered/154337/"
+        ]
+    ],
+    "linux persistence techniques": [
+        "Monitor for activities and techniques associated with maintaining persistence on a Linux system--a sign that an adversary may have compromised your environment.",
+        [
+            "https://attack.mitre.org/techniques/T1053/",
+            "https://kifarunix.com/scheduling-tasks-using-at-command-in-linux/",
+            "https://gtfobins.github.io/gtfobins/at/",
+            "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf"
+        ]
+    ],
+    "agenttesla": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the AgentTesla malware including .chm application child process, ftp/smtp connection, persistence and many more. AgentTesla is one of the advanced remote access trojans (RAT) that are capable of stealing sensitive information from the infected or targeted host machine. It can collect various types of data, including browser profile information, keystrokes, capture screenshots and vpn credentials. AgentTesla has been active malware since 2014 and often delivered as a malicious attachment in phishing emails.It is also the top malware in 2021 based on the CISA report.",
+        [
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.agent_tesla",
+            "https://cert.gov.ua/article/861292",
+            "https://www.cisa.gov/uscert/ncas/alerts/aa22-216a",
+            "https://www.joesandbox.com/analysis/702680/0/html"
+        ]
+    ],
+    "windows log manipulation": [
+        "Adversaries often try to cover their tracks by manipulating Windows logs. Use these searches to help you monitor for suspicious activity surrounding log files--an essential component of an effective defense.",
+        [
+            "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/",
+            "https://zeltser.com/security-incident-log-review-checklist/",
+            "http://journeyintoir.blogspot.com/2013/01/re-introducing-usnjrnl.html"
+        ]
+    ],
+    "moonpeak": [
+        "Leverage searches that allow you to detect and investigate unusual activities linked to the MoonPeak malware, particularly focusing on command-and-control (C2) communications, data collection, file execution, and persistence mechanisms. Monitor network traffic for connections to known malicious IP addresses or domains associated with North Korean APT groups. Additionally, identify unexpected registry modifications and the presence of unauthorized binaries to uncover potential MoonPeak infections.",
+        [
+            "https://blog.talosintelligence.com/moonpeak-malware-infrastructure-north-korea/"
+        ]
+    ],
+    "living off the land": [
+        "Leverage analytics that allow you to identify the presence of an adversary leveraging native applications within your environment.",
+        [
+            "https://lolbas-project.github.io/"
+        ]
+    ],
+    "cve-2023-22515 privilege escalation vulnerability confluence data center and server": [
+        "On October 4, 2023, Atlassian disclosed a critical privilege escalation vulnerability, CVE-2023-22515, affecting on-premises instances of Confluence Server and Confluence Data Center. This flaw might allow external attackers to exploit accessible Confluence instances, creating unauthorized Confluence administrator accounts. Indicators suggest the vulnerability is remotely exploitable. The affected versions range from 8.0.0 to 8.5.1, but versions prior to 8.0.0 and Atlassian Cloud sites are unaffected. Atlassian advises customers to update to a fixed version or implement mitigation strategies. Indicators of compromise (IoCs) and mitigation steps, such as blocking access to /setup/* endpoints, are provided.",
+        [
+            "https://confluence.atlassian.com/security/cve-2023-22515-privilege-escalation-vulnerability-in-confluence-data-center-and-server-1295682276.html",
+            "https://www.rapid7.com/blog/post/2023/10/04/etr-cve-2023-22515-zero-day-privilege-escalation-in-confluence-server-and-data-center/"
+        ]
+    ],
+    "cisa aa22-264a": [
+        "Iranian State Actors Conduct Cyber Operations Against the Government of Albania.",
+        [
+            "https://www.cisa.gov/uscert/ncas/alerts/aa22-264a",
+            "https://www.cisa.gov/uscert/sites/default/files/publications/aa22-264a-iranian-cyber-actors-conduct-cyber-operations-against-the-government-of-albania.pdf",
+            "https://www.mandiant.com/resources/blog/likely-iranian-threat-actor-conducts-politically-motivated-disruptive-activity-against",
+            "https://www.microsoft.com/security/blog/2022/09/08/microsoft-investigates-iranian-attacks-against-the-albanian-government/"
+        ]
+    ],
+    "kubernetes scanning activity": [
+        "This story addresses detection against Kubernetes cluster fingerprint scan and attack by providing information on items such as source ip, user agent, cluster names.",
+        [
+            "https://github.com/splunk/cloud-datamodel-security-research"
+        ]
+    ],
+    "printnightmare cve-2021-34527": [
+        "The following analytic story identifies behaviors related PrintNightmare, or CVE-2021-34527 previously known as (CVE-2021-1675), to gain privilege escalation on the vulnerable machine.",
+        [
+            "https://github.com/cube0x0/CVE-2021-1675/",
+            "https://blog.truesec.com/2021/06/30/fix-for-printnightmare-cve-2021-1675-exploit-to-keep-your-print-servers-running-while-a-patch-is-not-available/",
+            "https://blog.truesec.com/2021/06/30/exploitable-critical-rce-vulnerability-allows-regular-users-to-fully-compromise-active-directory-printnightmare-cve-2021-1675/",
+            "https://www.reddit.com/r/msp/comments/ob6y02/critical_vulnerability_printnightmare_exposes"
+        ]
+    ],
+    "gcp account takeover": [
+        "Monitor for activities and techniques associated with Account Takeover attacks against Google Cloud Platform tenants.",
+        [
+            "https://cloud.google.com/gcp",
+            "https://cloud.google.com/architecture/identity/overview-google-authentication",
+            "https://attack.mitre.org/techniques/T1586/",
+            "https://www.imperva.com/learn/application-security/account-takeover-ato/",
+            "https://www.barracuda.com/glossary/account-takeover"
+        ]
+    ],
+    "compromised linux host": [
+        "Monitor for activities and techniques associated with Compromised Linux Host attacks. These include unauthorized access attempts, unusual network traffic patterns, and the presence of unknown or suspicious processes. Look for unexpected changes in system files, modifications to configuration files, and the installation of unrecognized software. Pay attention to abnormal resource usage, such as high CPU or memory consumption. Regularly review logs for signs of privilege escalation or lateral movement, and ensure integrity checks are in place to detect tampering with critical system components.",
+        []
+    ],
+    "nobelium group": [
+        "NOBELIUM, also known as APT29, The Dukes, Cozy Bear, CozyDuke, Blue Kitsune, and Midnight Blizzard, is a sophisticated nation-state threat actor, reportedly associated with Russian intelligence. Active since at least 2008, this group primarily targets government networks in Europe and NATO member countries, along with research institutes and think tanks. Their operations typically involve advanced persistent threats (APT), leveraging techniques like spear-phishing, malware deployment, and long-term network compromise to achieve information theft and espionage. Notably, APT29 has been implicated in significant cyber espionage incidents, including the 2015 breach of the Pentagon's Joint Staff email system and attacks on the Democratic National Committee in 2016. Their advanced tactics and persistent approach underscore the serious nature of threats posed by this group to global cybersecurity.",
+        [
+            "https://attack.mitre.org/groups/G0016/",
+            "https://www.microsoft.com/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/",
+            "https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html",
+            "https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/",
+            "https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/"
+        ]
+    ],
+    "suspicious compiled html activity": [
+        "Monitor and detect techniques used by attackers who leverage the mshta.exe process to execute malicious code.",
+        [
+            "https://redcanary.com/blog/introducing-atomictestharnesses/",
+            "https://attack.mitre.org/techniques/T1218/001/",
+            "https://docs.microsoft.com/en-us/windows/win32/api/htmlhelp/nf-htmlhelp-htmlhelpa"
+        ]
+    ],
+    "windows privilege escalation": [
+        "Monitor for and investigate activities that may be associated with a Windows privilege-escalation attack, including unusual processes running on endpoints, modified registry keys, and more.",
+        [
+            "https://attack.mitre.org/tactics/TA0004/"
+        ]
+    ],
+    "abnormal kubernetes behavior using splunk infrastructure monitoring": [
+        "Kubernetes, a complex container orchestration system, is susceptible to a variety of security threats. This story delves into the different strategies and methods adversaries employ to exploit Kubernetes environments. These include attacks on the control plane, exploitation of misconfigurations, and breaches of containerized applications. Observability data, such as metrics, play a crucial role in identifying abnormal and potentially malicious behavior within these environments.",
+        [
+            "https://kubernetes.io/docs/concepts/security/",
+            "https://splunkbase.splunk.com/app/5247"
+        ]
+    ],
+    "ingress tool transfer": [
+        "Adversaries may transfer tools or other files from an external system into a compromised environment. Files may be copied from an external adversary controlled system through the Command And Control channel to bring tools into the victim network or through alternate protocols with another tool such as FTP.",
+        [
+            "https://attack.mitre.org/techniques/T1105/"
+        ]
+    ],
+    "samsam ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the SamSam ransomware, including looking for file writes associated with SamSam, RDP brute force attacks, the presence of files with SamSam ransomware extensions, suspicious psexec use, and more.",
+        [
+            "https://www.crowdstrike.com/blog/an-in-depth-analysis-of-samsam-ransomware-and-boss-spider/",
+            "https://nakedsecurity.sophos.com/2018/07/31/samsam-the-almost-6-million-ransomware/",
+            "https://thehackernews.com/2018/07/samsam-ransomware-attacks.html"
+        ]
+    ],
+    "windows attack surface reduction": [
+        "This story contains detections for Windows Attack Surface Reduction (ASR) events. ASR is a feature of Windows Defender Exploit Guard that prevents actions and apps that are typically used by exploit-seeking malware to infect machines. ASR rules are applied to processes and applications. When a process or application attempts to perform an action that is blocked by an ASR rule, an event is generated. This story contains detections for ASR events that are generated when a process or application attempts to perform an action that is blocked by an ASR rule.",
+        [
+            "https://asrgen.streamlit.app/",
+            "https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/attack-surface-reduction?view=o365-worldwide"
+        ]
+    ],
+    "brand monitoring": [
+        "Detect and investigate activity that may indicate that an adversary is using faux domains to mislead users into interacting with malicious infrastructure. Monitor DNS, email, and web traffic for permutations of your brand name.",
+        [
+            "https://www.zerofox.com/blog/what-is-digital-risk-monitoring/",
+            "https://securingtomorrow.mcafee.com/consumer/family-safety/what-is-typosquatting/",
+            "https://blog.malwarebytes.com/cybercrime/2016/06/explained-typosquatting/"
+        ]
+    ],
+    "remote monitoring and management software": [
+        "Fortify your remote access and unapproved software monitoring with searches that monitor for and help you investigate the use of unappoved or malicious remote monitoring and management softwares (RMM).",
+        [
+            "https://attack.mitre.org/techniques/T1219/",
+            "https://thedfirreport.com/2022/08/08/bumblebee-roasts-its-way-to-domain-admin/",
+            "https://thedfirreport.com/2022/11/28/emotet-strikes-again-lnk-file-leads-to-domain-wide-ransomware/"
+        ]
+    ],
+    "meterpreter": [
+        "Meterpreter provides red teams, pen testers and threat actors interactive access to a compromised host to run commands, upload payloads, download files, and other actions.",
+        [
+            "https://www.offensive-security.com/metasploit-unleashed/about-meterpreter/",
+            "https://doubleoctopus.com/security-wiki/threats-and-tools/meterpreter/",
+            "https://www.rapid7.com/products/metasploit/"
+        ]
+    ],
+    "gozi malware": [
+        "This analytic story covers the detection and analysis of Gozi malware, also known as Ursnif or ISFB. Gozi is one of the oldest and most persistent banking trojans, with a history dating back to 2000. It has undergone numerous evolutions and code forks, resulting in several active variants in recent years.",
+        [
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.gozi",
+            "https://thedfirreport.com/2023/01/09/unwrapping-ursnifs-gifts/"
+        ]
+    ],
+    "monitor for updates": [
+        "Monitor your enterprise to ensure that your endpoints are being patched and updated. Adversaries notoriously exploit known vulnerabilities that could be mitigated by applying routine security patches.",
+        [
+            "https://learn.cisecurity.org/20-controls-download"
+        ]
+    ],
+    "command and control": [
+        "Detect and investigate tactics, techniques, and procedures leveraged by attackers to establish and operate Command And Control channels. Implants installed by attackers on compromised endpoints use these channels to receive instructions and send data back to the malicious operators.",
+        [
+            "https://attack.mitre.org/wiki/Command_and_Control",
+            "https://searchsecurity.techtarget.com/feature/Command-and-control-servers-The-puppet-masters-that-govern-malware"
+        ]
+    ],
+    "linux rootkit": [
+        "Adversaries may use rootkits to hide the presence of programs, files, network connections, services, drivers, and other system components. Rootkits are programs that hide the existence of malware by intercepting/hooking and modifying operating system API calls that supply system information.",
+        [
+            "https://attack.mitre.org/techniques/T1014/",
+            "https://content.fireeye.com/apt-41/rpt-apt41",
+            "https://medium.com/chronicle-blog/winnti-more-than-just-windows-and-gates-e4f03436031a"
+        ]
+    ],
+    "windows certificate services": [
+        "Adversaries may steal or forge certificates used for authentication to access remote systems or resources. Digital certificates are often used to sign and encrypt messages and/or files. Certificates are also used as authentication material.",
+        [
+            "https://attack.mitre.org/techniques/T1649/"
+        ]
+    ],
+    "vmware server side injection and privilege escalation": [
+        "Recently disclosed CVE-2022-22954 and CVE-2022-22960 have been identified in the wild abusing VMware products to compromise internet faced devices and escalate privileges.",
+        [
+            "https://attackerkb.com/topics/BDXyTqY1ld/cve-2022-22954/rapid7-analysis",
+            "https://www.cisa.gov/uscert/ncas/alerts/aa22-138b"
+        ]
+    ],
+    "snake keylogger": [
+        "SnakeKeylogger is a stealthy malware designed to secretly record keystrokes on infected devices. It operates covertly in the background, capturing sensitive information such as passwords and credit card details. This keylogging threat poses a significant risk to user privacy and security.",
+        [
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.404keylogger",
+            "https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-malware/snake-keylogger-malware/"
+        ]
+    ],
+    "petitpotam ntlm relay on active directory certificate services": [
+        "PetitPotam (CVE-2021-36942,) is a vulnerablity identified in Microsofts EFSRPC Protocol that can allow an unauthenticated account to escalate privileges to domain administrator given the right circumstances.",
+        [
+            "https://us-cert.cisa.gov/ncas/current-activity/2021/07/27/microsoft-releases-guidance-mitigating-petitpotam-ntlm-relay",
+            "https://support.microsoft.com/en-us/topic/kb5005413-mitigating-ntlm-relay-attacks-on-active-directory-certificate-services-ad-cs-3612b773-4043-4aa9-b23d-b87910cd3429",
+            "https://www.specterops.io/assets/resources/Certified_Pre-Owned.pdf",
+            "https://github.com/topotam/PetitPotam/",
+            "https://github.com/gentilkiwi/mimikatz/releases/tag/2.2.0-20210723",
+            "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36942",
+            "https://attack.mitre.org/techniques/T1187/"
+        ]
+    ],
+    "citrix netscaler adc cve-2023-3519": [
+        "The CVE-2023-3519 vulnerability in NetScaler (formerly Citrix) Application Delivery Controller (ADC) and NetScaler Gateway has been exploited by threat actors, as detailed in a recent advisory. The unauthenticated remote code execution vulnerability was utilized as a zero-day to establish a webshell on a non-production environment NetScaler ADC appliance within a critical infrastructure organization. This facilitated the execution of discovery on the victim's active directory and the collection and exfiltration of data. The advisory offers a comprehensive examination of the threat actors' tactics, techniques, and procedures (TTPs), alongside recommended detection methods and incident response guidelines. Immediate patch application from Citrix and the use of the detection guidance in the advisory is strongly recommended for critical infrastructure organizations to mitigate system compromises.",
+        [
+            "https://attackerkb.com/topics/si09VNJhHh/cve-2023-3519",
+            "https://www.cisa.gov/sites/default/files/2023-07/aa23-201a_csa_threat_actors_exploiting_citrix-cve-2023-3519_to_implant_webshells.pdf",
+            "https://support.citrix.com/article/CTX561482/citrix-adc-and-citrix-gateway-security-bulletin-for-cve20233519-cve20233466-cve20233467"
+        ]
+    ],
+    "fin7": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the FIN7 JS Implant and JSSLoader, including looking for Image Loading of ldap and wmi modules, associated with its payload, data collection and script execution.",
+        [
+            "https://en.wikipedia.org/wiki/FIN7",
+            "https://threatpost.com/fin7-windows-11-release/169206/",
+            "https://www.proofpoint.com/us/blog/threat-insight/jssloader-recoded-and-reloaded"
+        ]
+    ],
+    "suspicious cloud authentication activities": [
+        "Monitor your cloud authentication events. Searches within this Analytic Story leverage the recent cloud updates to the Authentication data model to help you stay aware of and investigate suspicious login activity.",
+        [
+            "https://aws.amazon.com/blogs/security/aws-cloudtrail-now-tracks-cross-account-activity-to-its-origin/",
+            "https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html"
+        ]
+    ],
+    "windows persistence techniques": [
+        "Monitor for activities and techniques associated with maintaining persistence on a Windows system--a sign that an adversary may have compromised your environment.",
+        [
+            "http://www.fuzzysecurity.com/tutorials/19.html",
+            "https://www.fireeye.com/blog/threat-research/2010/07/malware-persistence-windows-registry.html",
+            "http://resources.infosecinstitute.com/common-malware-persistence-mechanisms/",
+            "https://www.fireeye.com/blog/threat-research/2017/05/fin7-shim-databases-persistence.html",
+            "https://www.youtube.com/watch?v=dq2Hv7J9fvk"
+        ]
+    ],
+    "meduza stealer": [
+        "Meduza Stealer is a sophisticated and rapidly evolving malware designed to extract sensitive data from compromised systems. Detected primarily through anomalous network activities, its behavior often involves outbound connections to command-and-control (C2) servers, encrypting and exfiltrating stolen credentials, financial data, and other personal information. Analysts have identified Meduza Stealer leveraging advanced evasion techniques, including dynamic obfuscation, anti-analysis methods, and the use of polymorphic code to bypass detection by traditional antivirus systems. Once deployed, it scans for browser-stored passwords, cryptocurrency wallets, and keylogging opportunities, potentially exploiting unpatched software vulnerabilities. Security tools flag it through heuristic detections, anomalous process executions, or unusual registry modifications. Meduza Stealer's malicious payloads are often distributed via phishing emails, malicious attachments, or trojanized software downloads. Effective defense requires a multi-layered security approach, regular software updates, and employee training to minimize risks posed by this potent cyber threat.",
+        [
+            "https://www.fortinet.com/blog/threat-research/exploiting-cve-2024-21412-stealer-campaign-unleashed",
+            "https://cert.gov.ua/article/6276652",
+            "https://cert.gov.ua/article/6281018",
+            "https://g0njxa.medium.com/approaching-stealers-devs-a-brief-interview-with-meduza-f1bbd2efb84f"
+        ]
+    ],
+    "office 365 account takeover": [
+        "Monitor for activities and anomalies indicative of initial access techniques within Office 365 environments.",
+        [
+            "https://docs.microsoft.com/en-us/security/compass/incident-response-playbook-password-spray",
+            "https://www.cisa.gov/uscert/ncas/alerts/aa21-008a",
+            "https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-sign-ins-error-codes",
+            "https://attack.mitre.org/tactics/TA0001/",
+            "https://stealthbits.com/blog/bypassing-mfa-with-pass-the-cookie/",
+            "https://www.microsoft.com/en-us/security/blog/2022/09/22/malicious-oauth-applications-used-to-compromise-email-servers-and-spread-spam/",
+            "https://learn.microsoft.com/en-us/defender-cloud-apps/investigate-risky-oauth",
+            "https://www.alteredsecurity.com/post/introduction-to-365-stealer",
+            "https://github.com/AlteredSecurity/365-Stealer"
+        ]
+    ],
+    "sysaid on-prem software cve-2023-47246 vulnerability": [
+        "A zero-day vulnerability was discovered in SysAid's on-premise software, exploited by the group DEV-0950 (Lace Tempest). The attackers uploaded a WebShell and other payloads, gaining unauthorized access and control. SysAid has released a patch (version 23.3.36) to remediate the vulnerability and urges customers to conduct a comprehensive compromise assessment.",
+        [
+            "https://www.sysaid.com/blog/service-desk/on-premise-software-security-vulnerability-notification"
+        ]
+    ],
+    "awfulshred": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the AwfulShred malware including wiping files, process kill, system reboot via system request, shred,  and service stops.",
+        [
+            "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/overview-of-the-cyber-weapons-used-in-the-ukraine-russia-war/",
+            "https://cert.gov.ua/article/3718487"
+        ]
+    ],
+    "remcos": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the Remcos RAT trojan, including looking for file writes associated with its payload, screencapture, registry modification, UAC bypassed, persistence and data collection..",
+        [
+            "https://success.trendmicro.com/solution/1123281-remcos-malware-information",
+            "https://attack.mitre.org/software/S0332/",
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.remcos#:~:text=Remcos%20(acronym%20of%20Remote%20Control,used%20to%20remotely%20control%20computers.&text=Remcos%20can%20be%20used%20for,been%20used%20in%20hacking%20campaigns."
+        ]
+    ],
+    "wordpress vulnerabilities": [
+        "This analytic story provides a collection of analytics that detect potential exploitation of WordPress vulnerabilities. The analytics are focused on the detection of known vulnerabilities in WordPress plugins and themes.",
+        [
+            "https://attack.mitre.org/techniques/T1190",
+            "https://github.com/Tornad0007/CVE-2024-25600-Bricks-Builder-plugin-for-WordPress/blob/main/exploit.py",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-25600",
+            "https://op-c.net/blog/cve-2024-25600-wordpresss-bricks-builder-rce-flaw-under-active-exploitation/",
+            "https://thehackernews.com/2024/02/wordpress-bricks-theme-under-active.html"
+        ]
+    ],
+    "windows applocker": [
+        "Windows AppLocker is a feature that enhances security by allowing administrators to specify which users or groups can run particular applications in their organization based on unique identities of files. This story covers various aspects of monitoring and managing AppLocker policies, including detecting unauthorized software installations, enforcing best practices for software usage, and identifying potential security breaches through advanced threat detection techniques. Through the use of Splunk Enterprise, Splunk Enterprise Security, and Splunk Cloud, organizations can gain insights into AppLocker events, ensuring compliance with corporate security policies and mitigating risks associated with unauthorized applications.",
+        []
+    ],
+    "winrar spoofing attack cve-2023-38831": [
+        "Group-IB Threat Intelligence unit discovered a zero-day vulnerability, CVE-2023-38831, in WinRAR, a popular compression tool. Cybercriminals exploited this vulnerability to deliver various malware families, including DarkMe and GuLoader, by crafting ZIP archives with spoofed extensions, which were then distributed on trading forums. Once the malware was executed, it allowed cybercriminals to withdraw funds from brokers' accounts. RARLAB was immediately notified about the vulnerability and released a patch. Group-IB recommends users update WinRAR to the latest version, stay informed about cyber threats, be cautious with unknown attachments, enable 2FA, backup data, and follow the principle of least privilege.",
+        [
+            "https://www.group-ib.com/blog/cve-2023-38831-winrar-zero-day/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-38831"
+        ]
+    ],
+    "jetbrains teamcity unauthenticated rce": [
+        "A critical security vulnerability, CVE-2023-42793, has been discovered affecting all versions of TeamCity On-Premises up to 2023.05.3. This vulnerability allows unauthenticated attackers to execute remote code and gain administrative control of the TeamCity server, posing a significant risk for supply chain attacks. Although the issue has been fixed in version 2023.05.4, servers running older versions remain at risk. A security patch plugin has been released for immediate mitigation, applicable to TeamCity versions 8.0 and above. Organizations are strongly advised to update to the fixed version or apply the security patch, especially if their TeamCity server is publicly accessible. No impact has been reported on TeamCity Cloud as it has been upgraded to the secure version.",
+        [
+            "https://blog.jetbrains.com/teamcity/2023/09/critical-security-issue-affecting-teamcity-on-premises-update-to-2023-05-4-now/",
+            "https://www.sonarsource.com/blog/teamcity-vulnerability/",
+            "https://github.com/rapid7/metasploit-framework/pull/18408",
+            "https://attackerkb.com/topics/1XEEEkGHzt/cve-2023-42793/rapid7-analysis"
+        ]
+    ],
+    "snake malware": [
+        "The Snake implant is considered the most sophisticated cyber espionage tool designed and used by Center 16 of Russia's Federal Security Service (FSB) for long-term intelligence collection on sensitive targets.",
+        [
+            "https://media.defense.gov/2023/May/09/2003218554/-1/-1/0/JOINT_CSA_HUNTING_RU_INTEL_SNAKE_MALWARE_20230509.PDF"
+        ]
+    ],
+    "okta account takeover": [
+        "The Okta Account Takeover analytic story encompasses a comprehensive suite of detections aimed at identifying unauthorized access and potential takeover attempts of Okta accounts. This collection leverages diverse data points and behavioral analytics to safeguard user identities and access within cloud environments. Monitor for activities and techniques associated with Account Takeover attacks against Okta tenants.",
+        [
+            "https://attack.mitre.org/techniques/T1586/",
+            "https://www.imperva.com/learn/application-security/account-takeover-ato/",
+            "https://www.barracuda.com/glossary/account-takeover",
+            "https://www.okta.com/customer-identity/"
+        ]
+    ],
+    "linux privilege escalation": [
+        "Monitor for and investigate activities that may be associated with a Linux privilege-escalation attack, including unusual processes running on endpoints, schedule task, services, setuid, root execution and more.",
+        [
+            "https://attack.mitre.org/tactics/TA0004/"
+        ]
+    ],
+    "cobalt strike": [
+        "Cobalt Strike is threat emulation software. Red teams and penetration testers use Cobalt Strike to demonstrate the risk of a breach and evaluate mature security programs. Most recently, Cobalt Strike has become the choice tool by threat groups due to its ease of use and extensibility.",
+        [
+            "https://www.cobaltstrike.com/",
+            "https://www.infocyte.com/blog/2020/09/02/cobalt-strike-the-new-favorite-among-thieves/",
+            "https://bluescreenofjeff.com/2017-01-24-how-to-write-malleable-c2-profiles-for-cobalt-strike/",
+            "https://blog.talosintelligence.com/2020/09/coverage-strikes-back-cobalt-strike-paper.html",
+            "https://www.fireeye.com/blog/threat-research/2020/12/unauthorized-access-of-fireeye-red-team-tools.html",
+            "https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence",
+            "https://github.com/zer0yu/Awesome-CobaltStrike"
+        ]
+    ],
+    "icedid": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the IcedID banking trojan, including looking for file writes associated with its payload, process injection, shellcode execution and data collection.",
+        [
+            "https://threatpost.com/icedid-banking-trojan-surges-emotet/165314/",
+            "https://app.any.run/tasks/48414a33-3d66-4a46-afe5-c2003bb55ccf/"
+        ]
+    ],
+    "whispergate": [
+        "This analytic story contains detections that allow security analysts to detect and investigate unusual activities that might relate to the destructive malware targeting Ukrainian organizations also known as \"WhisperGate\". This analytic story looks for suspicious process execution, command-line activity, downloads, DNS queries and more.",
+        [
+            "https://www.microsoft.com/security/blog/2022/01/15/destructive-malware-targeting-ukrainian-organizations/",
+            "https://medium.com/s2wblog/analysis-of-destructive-malware-whispergate-targeting-ukraine-9d5d158f19f3"
+        ]
+    ],
+    "sql injection": [
+        "Use the searches in this Analytic Story to help you detect structured query language (SQL) injection attempts characterized by long URLs that contain malicious parameters.",
+        [
+            "https://capec.mitre.org/data/definitions/66.html",
+            "https://www.incapsula.com/web-application-security/sql-injection.html"
+        ]
+    ],
+    "revil ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the Revil ransomware, including looking for file writes associated with Revil, encrypting network shares, deleting shadow volume storage, registry key modification, deleting of security logs, and more.",
+        [
+            "https://krebsonsecurity.com/2021/05/a-closer-look-at-the-darkside-ransomware-gang/",
+            "https://www.mcafee.com/blogs/other-blogs/mcafee-labs/mcafee-atr-analyzes-sodinokibi-aka-revil-ransomware-as-a-service-what-the-code-tells-us/"
+        ]
+    ],
+    "windows discovery techniques": [
+        "Monitors for behaviors associated with adversaries discovering objects in the environment that can be leveraged in the progression of the attack.",
+        [
+            "https://attack.mitre.org/tactics/TA0007/",
+            "https://cyberd.us/penetration-testing",
+            "https://attack.mitre.org/software/S0521/"
+        ]
+    ],
+    "dns amplification attacks": [
+        "DNS poses a serious threat as a Denial of Service (DOS) amplifier, if it responds to `ANY` queries. This Analytic Story can help you detect attackers who may be abusing your company's DNS infrastructure to launch amplification attacks, causing Denial of Service to other victims.",
+        [
+            "https://www.us-cert.gov/ncas/alerts/TA13-088A",
+            "https://www.imperva.com/learn/application-security/dns-amplification/"
+        ]
+    ],
+    "cyclops blink": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the cyclopsblink malware including firewall modification, spawning more process, botnet c2 communication, defense evasion and etc. Cyclops Blink is a Linux ELF executable compiled for 32-bit x86 and PowerPC architecture that has targeted several network devices. The complete list of targeted devices is unknown at this time, but WatchGuard FireBox has specifically been listed as a target. The modular malware consists of core components and modules that are deployed as child processes using the Linux API fork. At this point, four modules have been identified that download and upload files, gather system information and contain updating mechanisms for the malware itself. Additional modules can be downloaded and executed from the Command And Control (C2) server.",
+        [
+            "https://www.ncsc.gov.uk/files/Cyclops-Blink-Malware-Analysis-Report.pdf",
+            "https://www.trendmicro.com/en_us/research/22/c/cyclops-blink-sets-sights-on-asus-routers--.html"
+        ]
+    ],
+    "insider threat": [
+        "Monitor for activities and techniques associated with insider threats and specifically focusing on malicious insiders operating with in a corporate environment.",
+        [
+            "https://www.imperva.com/learn/application-security/insider-threats/",
+            "https://www.cisa.gov/defining-insider-threats",
+            "https://www.code42.com/glossary/types-of-insider-threats/",
+            "https://github.com/Insider-Threat/Insider-Threat",
+            "https://ctid.mitre-engenuity.org/our-work/insider-ttp-kb/"
+        ]
+    ],
+    "active directory password spraying": [
+        "Monitor for activities and techniques associated with Password Spraying attacks within Active Directory environments.",
+        [
+            "https://attack.mitre.org/techniques/T1110/003/",
+            "https://www.microsoft.com/security/blog/2020/04/23/protecting-organization-password-spray-attacks/",
+            "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn452415(v=ws.11)"
+        ]
+    ],
+    "suspicious emails": [
+        "Email remains one of the primary means for attackers to gain an initial foothold within the modern enterprise. Detect and investigate suspicious emails in your environment with the help of the searches in this Analytic Story.",
+        [
+            "https://www.splunk.com/blog/2015/06/26/phishing-hits-a-new-level-of-quality/"
+        ]
+    ],
+    "sandworm tools": [
+        "This analytic story features detections that enable security analysts to identify and investigate unusual activities potentially related to the destructive malware and tools employed by the \"Sandworm\" group. This analytic story focuses on monitoring suspicious process executions, command-line activities, Master Boot Record (MBR) wiping, data destruction, and other related indicators.",
+        [
+            "https://cert.gov.ua/article/3718487",
+            "https://attack.mitre.org/groups/G0034/"
+        ]
+    ],
+    "subvert trust controls sip and trust provider hijacking": [
+        "Adversaries may tamper with SIP and trust provider components to mislead the operating system and application control tools when conducting signature validation checks. This technique involves modifying the Dll and FuncName Registry values that point to the dynamic link library (DLL) providing a SIP's function, which retrieves an encoded digital certificate from a signed file. By pointing to a maliciously-crafted DLL with an exported function that always returns a known good signature value, an adversary can apply an acceptable signature value to all files using that SIP. This can also enable persistent code execution, since these malicious components may be invoked by any application that performs code signing or signature validation.",
+        [
+            "https://attack.mitre.org/techniques/T1553/003/",
+            "https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_set/registry_set_sip_persistence.yml",
+            "https://specterops.io/wp-content/uploads/sites/3/2022/06/SpecterOps_Subverting_Trust_in_Windows.pdf",
+            "https://github.com/gtworek/PSBits/tree/master/SIP",
+            "https://github.com/mattifestation/PoCSubjectInterfacePackage",
+            "https://pentestlab.blog/2017/11/06/hijacking-digital-signatures/"
+        ]
+    ],
+    "spearphishing attachments": [
+        "Detect signs of malicious payloads that may indicate that your environment has been breached via a phishing attack.",
+        [
+            "https://www.fireeye.com/blog/threat-research/2019/04/spear-phishing-campaign-targets-ukraine-government.html"
+        ]
+    ],
+    "suspicious okta activity": [
+        "Monitor your Okta environment for suspicious activities. Due to the Covid outbreak, many users are migrating over to leverage cloud services more and more. Okta is a popular tool to manage multiple users and the web-based applications they need to stay productive. The searches in this story will help monitor your Okta environment for suspicious activities and associated user behaviors.",
+        [
+            "https://attack.mitre.org/wiki/Technique/T1078",
+            "https://owasp.org/www-community/attacks/Credential_stuffing",
+            "https://searchsecurity.techtarget.com/answer/What-is-a-password-spraying-attack-and-how-does-it-work"
+        ]
+    ],
+    "crushftp vulnerabilities": [
+        "CVE-2024-4040 identifies a critical server-side template injection vulnerability in all versions of CrushFTP prior to 10.7.1 and 11.1.0, allowing unauthenticated remote attackers to execute arbitrary code, bypass authentication, and access files outside of the VFS Sandbox.",
+        [
+            "https://github.com/airbus-cert/CVE-2024-4040",
+            "https://www.bleepingcomputer.com/news/security/crushftp-warns-users-to-patch-exploited-zero-day-immediately/"
+        ]
+    ],
+    "rhysida ransomware": [
+        "Utilize analytics designed to identify and delve into atypical behaviors, potentially associated with the Rhysida Ransomware. Employing these searches enables the detection of irregular patterns or actions within systems or networks, serving as proactive measures to spot potential indicators of compromise or ongoing threats. By implementing these search strategies, security analysts can effectively pinpoint anomalous activities, such as unusual file modifications, deviations in system behavior, that could potentially signify the presence or attempt of Rhysida Ransomware infiltration. These searches serve as pivotal tools in the arsenal against such threats, aiding in swift detection, investigation, and mitigation efforts to counter the impact of the Rhysida Ransomware or similar malicious entities.",
+        [
+            "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-319a"
+        ]
+    ],
+    "redline stealer": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the Redline Stealer trojan, including looking for file writes associated with its payload, screencapture, registry modification, persistence and data collection..",
+        [
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.redline_stealer",
+            "https://blogs.blackberry.com/en/2021/10/threat-thursday-redline-infostealer-update"
+        ]
+    ],
+    "trickbot": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the trickbot banking trojan, including looking for file writes associated with its payload, process injection, shellcode execution and data collection even in LDAP environment.",
+        [
+            "https://en.wikipedia.org/wiki/Trickbot",
+            "https://blog.checkpoint.com/2021/03/11/february-2021s-most-wanted-malware-trickbot-takes-over-following-emotet-shutdown/"
+        ]
+    ],
+    "suspicious mshta activity": [
+        "Monitor and detect techniques used by attackers who leverage the mshta.exe process to execute malicious code.",
+        [
+            "https://redcanary.com/blog/introducing-atomictestharnesses/",
+            "https://redcanary.com/blog/windows-registry-attacks-threat-detection/",
+            "https://attack.mitre.org/techniques/T1218/005/",
+            "https://medium.com/@mbromileyDFIR/malware-monday-aebb456356c5"
+        ]
+    ],
+    "detect zerologon attack": [
+        "Uncover activity related to the execution of Zerologon CVE-2020-11472, a technique wherein attackers target a Microsoft Windows Domain Controller to reset its computer account password. The result from this attack is attackers can now provide themselves high privileges and take over Domain Controller. The included searches in this Analytic Story are designed to identify attempts to reset Domain Controller Computer Account via exploit code remotely or via the use of tool Mimikatz as payload carrier.",
+        [
+            "https://attack.mitre.org/wiki/Technique/T1003",
+            "https://github.com/SecuraBV/CVE-2020-1472",
+            "https://www.secura.com/blog/zero-logon",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-1472"
+        ]
+    ],
+    "juniper junos remote code execution": [
+        "Juniper Networks has resolved multiple critical vulnerabilities in the J-Web component of Junos OS on SRX and EX Series devices. These vulnerabilities, when chained together, could allow an unauthenticated, network-based attacker to remotely execute code on the devices. The vulnerabilities affect all versions of Junos OS on SRX and EX Series, but specific fixes have been released to address each vulnerability. Juniper Networks recommends applying the necessary fixes to mitigate potential remote code execution threats. As a workaround, users can disable J-Web or limit access to only trusted hosts. Proof-of-concept (PoC) exploit code has been released, demonstrating the severity of these flaws and the urgency to apply the fixes.",
+        [
+            "https://supportportal.juniper.net/s/article/2023-08-Out-of-Cycle-Security-Bulletin-Junos-OS-SRX-Series-and-EX-Series-Multiple-vulnerabilities-in-J-Web-can-be-combined-to-allow-a-preAuth-Remote-Code-Execution?language=en_US",
+            "https://github.com/projectdiscovery/nuclei-templates/blob/main/http/cves/2023/CVE-2023-36844.yaml",
+            "https://thehackernews.com/2023/08/new-juniper-junos-os-flaws-expose.html",
+            "https://github.com/watchtowrlabs/juniper-rce_cve-2023-36844",
+            "https://labs.watchtowr.com/cve-2023-36844-and-friends-rce-in-juniper-firewalls/"
+        ]
+    ],
+    "phemedrone stealer": [
+        "Phemedrone Stealer is a potent data-stealing malware designed to infiltrate systems discreetly, primarily targeting sensitive user information. Operating with a stealthy modus operandi, it covertly collects and exfiltrates critical data such as login credentials, personal details, and financial information. Notably evasive, Phemedrone employs sophisticated techniques to bypass security measures and remain undetected. Its capabilities extend to exploiting vulnerabilities, leveraging command and control infrastructure, and facilitating remote access. As a formidable threat, Phemedrone Stealer poses a significant risk to user privacy and system integrity, demanding vigilant cybersecurity measures to counteract its malicious activities.",
+        [
+            "https://www.trendmicro.com/en_vn/research/23/b/investigating-the-plugx-trojan-disguised-as-a-legitimate-windows.html"
+        ]
+    ],
+    "windows drivers": [
+        "Adversaries may use rootkits to hide the presence of programs, files, network connections, services, drivers, and other system components.",
+        [
+            "https://redcanary.com/blog/tracking-driver-inventory-to-expose-rootkits/",
+            "https://www.trendmicro.com/en_us/research/22/e/avoslocker-ransomware-variant-abuses-driver-file-to-disable-anti-Virus-scans-log4shell.html",
+            "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/daxin-backdoor-espionage",
+            "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08064459/Equation_group_questions_and_answers.pdf",
+            "https://www.welivesecurity.com/2022/01/11/signed-kernel-drivers-unguarded-gateway-windows-core/"
+        ]
+    ],
+    "cve-2023-23397 outlook elevation of privilege": [
+        "Microsoft has released CVE-2023-23397 to address the critical elevation of privilege (EoP) vulnerability affecting Microsoft Outlook for Windows.",
+        [
+            "https://twitter.com/ACEResponder/status/1636116096506818562?s=20",
+            "https://twitter.com/domchell/status/1635999068282408962?s=20",
+            "https://msrc.microsoft.com/blog/2023/03/microsoft-mitigates-outlook-elevation-of-privilege-vulnerability/",
+            "https://www.pwndefend.com/2023/03/15/the-long-game-persistent-hash-theft/"
+        ]
+    ],
+    "moveit transfer authentication bypass": [
+        "This analytic story addresses the critical authentication bypass vulnerability (CVE-2024-5806) in Progress MOVEit Transfer. The vulnerability allows attackers to impersonate any valid user on the system without proper credentials, potentially leading to unauthorized access, data theft, and system compromise. This story includes detections for key indicators of exploitation attempts, helping security teams identify and respond to potential attacks leveraging this vulnerability.",
+        [
+            "https://labs.watchtowr.com/auth-bypass-in-un-limited-scenarios-progress-moveit-transfer-cve-2024-5806/"
+        ]
+    ],
+    "f5 tmui rce cve-2020-5902": [
+        "Uncover activity consistent with CVE-2020-5902. Discovered by Positive Technologies researchers, this vulnerability affects F5 BIG-IP, BIG-IQ. and Traffix SDC devices (vulnerable versions in F5 support link below). This vulnerability allows unauthenticated users, along with authenticated users, who have access to the configuration utility to execute system commands, create/delete files, disable services, and/or execute Java code.  This vulnerability can result in full system compromise.",
+        [
+            "https://www.ptsecurity.com/ww-en/about/news/f5-fixes-critical-vulnerability-discovered-by-positive-technologies-in-big-ip-application-delivery-controller/",
+            "https://support.f5.com/csp/article/K52145254",
+            "https://blog.cloudflare.com/cve-2020-5902-helping-to-protect-against-the-f5-tmui-rce-vulnerability/"
+        ]
+    ],
+    "ivanti epm vulnerabilities": [
+        "This analytic story covers various vulnerabilities identified in Ivanti Endpoint Manager (EPM), including but not limited to SQL injection, remote code execution, and privilege escalation. These vulnerabilities can potentially be exploited by adversaries to gain unauthorized access, execute arbitrary code, and compromise the security of managed endpoints.",
+        [
+            "https://www.horizon3.ai/attack-research/attack-blogs/cve-2024-29824-deep-dive-ivanti-epm-sql-injection-remote-code-execution-vulnerability/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-29824",
+            "https://github.com/projectdiscovery/nuclei-templates/pull/10020/files"
+        ]
+    ],
+    "silver sparrow": [
+        "Silver Sparrow, identified by Red Canary Intelligence, is a new forward looking MacOS (Intel and M1) malicious software downloader utilizing JavaScript for execution and a launchAgent to establish persistence.",
+        [
+            "https://redcanary.com/blog/clipping-silver-sparrows-wings/",
+            "https://www.sentinelone.com/blog/5-things-you-need-to-know-about-silver-sparrow/"
+        ]
+    ],
+    "information sabotage": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might correlate to insider threat specially in terms of information sabotage.",
+        [
+            "https://insights.sei.cmu.edu/blog/insider-threat-deep-dive-it-sabotage/"
+        ]
+    ],
+    "warzone rat": [
+        "This analytic story contains detections that allow security analysts to detect and investigate unusual activities that might related to warzone (Ave maria) RAT. This analytic story looks for suspicious process execution, command-line activity, downloads, persistence, defense evasion and more.",
+        [
+            "https://www.blackberry.com/us/en/solutions/endpoint-security/ransomware-protection/warzone#:~:text=Warzone%20RAT%20(AKA%20Ave%20Maria)%20is%20a%20remote%20access%20trojan,is%20as%20an%20information%20stealer.",
+            "https://tccontre.blogspot.com/2020/02/2-birds-in-one-stone-ave-maria-wshrat.html"
+        ]
+    ],
+    "jenkins server vulnerabilities": [
+        "This analytic story provides a comprehensive view of Jenkins server vulnerabilities and associated detection analytics.",
+        [
+            "https://www.jenkins.io/security/advisory/2024-01-24/"
+        ]
+    ],
+    "acidpour": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to AcidPour Wiper malware. AcidPour is a destructive variant designed to irreversibly delete data from targeted systems, rendering them inoperable. Unlike ransomware, AcidPour focuses on data destruction, targeting critical storage sectors and overwriting files to make recovery impossible. This malware is capable of wiping and deleting non-standard linux files and overwriting storage device files that might related to router, ssd card and many more.",
+        [
+            "https://www.sentinelone.com/labs/acidpour-new-embedded-wiper-variant-of-acidrain-appears-in-ukraine/"
+        ]
+    ],
+    "outlook rce cve-2024-21378": [
+        "CVE-2024-21378 exposes a critical vulnerability in Microsoft Outlook, allowing for authenticated remote code execution (RCE) through the manipulation of synced form objects. Discovered by NetSPI in 2023, this vulnerability capitalizes on the unchanged syncing capability of form objects, despite previous patches aimed at securing script code in custom forms. This technical blog delves into the discovery and weaponization of CVE-2024-21378, enhancing the Outlook penetration testing tool, Ruler, to exploit this flaw. A forthcoming pull request will provide a proof-of-concept code, aiding organizations in mitigating this security risk.",
+        [
+            "https://www.netspi.com/blog/technical/red-team-operations/microsoft-outlook-remote-code-execution-cve-2024-21378/"
+        ]
+    ],
+    "citrix netscaler adc and netscaler gateway cve-2023-4966": [
+        "A critical security update, CVE-2023-4966, has been released for NetScaler ADC and NetScaler Gateway. This vulnerability, discovered by our internal team, can result in unauthorized data disclosure if exploited. Reports of incidents consistent with session hijacking have been received. The Cybersecurity and Infrastructure Security Agency (CISA) has added an entry for CVE-2023-4966 to its Known Exploited and Vulnerabilities Catalog. No workarounds are available for this vulnerability, and immediate installation of the recommended builds is strongly advised.",
+        [
+            "https://www.netscaler.com/blog/news/cve-2023-4966-critical-security-update-now-available-for-netscaler-adc-and-netscaler-gateway/",
+            "https://support.citrix.com/article/CTX579459/netscaler-adc-and-netscaler-gateway-security-bulletin-for-cve20234966-and-cve20234967",
+            "https://www.assetnote.io/resources/research/citrix-bleed-leaking-session-tokens-with-cve-2023-4966",
+            "https://github.com/assetnote/exploits/tree/main/citrix/CVE-2023-4966",
+            "https://github.com/projectdiscovery/nuclei-templates/blob/b815d23b908de52996060163091395d1c89fbeea/http/cves/2023/CVE-2023-4966.yaml"
+        ]
+    ],
+    "text4shell cve-2022-42889": [
+        "A new critical vulnerability CVE-2022-42889 a.k.a. Text4shell, similar to the old Spring4Shell and Log4Shell, was originally reported by Alvaro Munoz on the very popular Apache Commons Text library.",
+        [
+            "https://sysdig.com/blog/cve-2022-42889-text4shell/"
+        ]
+    ],
+    "baron samedit cve-2021-3156": [
+        "Uncover activity consistent with CVE-2021-3156. Discovered by the Qualys Research Team, this vulnerability has been found to affect sudo across multiple Linux distributions (Ubuntu 20.04 and prior, Debian 10 and prior, Fedora 33 and prior). As this vulnerability was committed to code in July 2011, there will be many distributions affected. Successful exploitation of this vulnerability allows any unprivileged user to gain root privileges on the vulnerable host.",
+        [
+            "https://blog.qualys.com/vulnerabilities-research/2021/01/26/cve-2021-3156-heap-based-buffer-overflow-in-sudo-baron-samedit"
+        ]
+    ],
+    "papercut mf ng vulnerability": [
+        "The FBI has issued a joint advisory concerning the exploitation of a PaperCut MF/NG vulnerability (CVE-2023-27350) by malicious actors, which began in mid-April 2023 and has been ongoing. In early May 2023, a group identifying themselves as the Bl00dy Ransomware Gang targeted vulnerable PaperCut servers within the Education Facilities Subsector. The advisory provides information on detecting exploitation attempts and shares known indicators of compromise (IOCs) associated with the group's activities.",
+        [
+            "https://www.cisa.gov/news-events/alerts/2023/05/11/cisa-and-fbi-release-joint-advisory-response-active-exploitation-papercut-vulnerability",
+            "https://www.papercut.com/kb/Main/PO-1216-and-PO-1219",
+            "https://www.horizon3.ai/papercut-cve-2023-27350-deep-dive-and-indicators-of-compromise/",
+            "https://www.bleepingcomputer.com/news/security/hackers-actively-exploit-critical-rce-bug-in-papercut-servers/",
+            "https://www.huntress.com/blog/critical-vulnerabilities-in-papercut-print-management-software"
+        ]
+    ],
+    "orangeworm attack group": [
+        "Detect activities and various techniques associated with the Orangeworm Attack Group, a group that frequently targets the healthcare industry.",
+        [
+            "https://www.symantec.com/blogs/threat-intelligence/orangeworm-targets-healthcare-us-europe-asia",
+            "https://www.infosecurity-magazine.com/news/healthcare-targeted-by-hacker/"
+        ]
+    ],
+    "domain trust discovery": [
+        "Adversaries may attempt to gather information on domain trust relationships that may be used to identify lateral movement opportunities in Windows multi-domain/forest environments.",
+        [
+            "https://attack.mitre.org/techniques/T1482/"
+        ]
+    ],
+    "use of cleartext protocols": [
+        "Leverage searches that detect cleartext network protocols that may leak credentials or should otherwise be encrypted.",
+        [
+            "https://www.monkey.org/~dugsong/dsniff/"
+        ]
+    ],
+    "suspicious wmi use": [
+        "Attackers are increasingly abusing Windows Management Instrumentation (WMI), a framework and associated utilities available on all modern Windows operating systems. Because WMI can be leveraged to manage both local and remote systems, it is important to identify the processes executed and the user context within which the activity occurred.",
+        [
+            "https://www.blackhat.com/docs/us-15/materials/us-15-Graeber-Abusing-Windows-Management-Instrumentation-WMI-To-Build-A-Persistent%20Asynchronous-And-Fileless-Backdoor-wp.pdf",
+            "https://web.archive.org/web/20210921091529/https://www.fireeye.com/blog/threat-research/2017/03/wmimplant_a_wmi_ba.html"
+        ]
+    ],
+    "ivanti virtual traffic manager cve-2024-7593": [
+        "This analytic story addresses the critical authentication bypass vulnerability (CVE-2024-7593) in Ivanti Virtual Traffic Manager (vTM). Disclosed in August 2024, this flaw affects vTM versions prior to 22.2R1 and 22.7R2, allowing unauthenticated remote attackers to access the admin panel and create new administrator accounts. Such access could potentially lead to full system compromise. The story provides detections for potential exploitation attempts, focusing on unauthorized account creation and suspicious administrative activities. It aims to help organizations identify and respond to possible attacks leveraging this vulnerability, emphasizing the importance of timely patching and thorough investigation of any suspicious events.",
+        [
+            "https://www.ivanti.com/security/security-advisories/ivanti-virtual-traffic-manager-vtm-cve-2024-7593",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-7593"
+        ]
+    ],
+    "gomir": [
+        "This analytic story includes detections that help security analysts identify and investigate unusual activities associated with the Gomir backdoor malware. Gomir is a sophisticated cyber threat that gains unauthorized access to systems. It communicates with a remote command-and-control (C2) server to execute malicious commands, steal sensitive data, and facilitate further attacks, often evading traditional security measures.",
+        [
+            "https://www.bleepingcomputer.com/news/security/kimsuky-hackers-deploy-new-linux-backdoor-via-trojanized-installers/",
+            "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/springtail-kimsuky-backdoor-espionage"
+        ]
+    ],
+    "emotet malware dhs report ta18-201a": [
+        "Detect rarely used executables, specific registry paths that may confer malware survivability and persistence, instances where cmd.exe is used to launch script interpreters, and other indicators that the Emotet financial malware has compromised your environment.",
+        [
+            "https://www.us-cert.gov/ncas/alerts/TA18-201A",
+            "https://www.first.org/resources/papers/conf2017/Advanced-Incident-Detection-and-Threat-Hunting-using-Sysmon-and-Splunk.pdf",
+            "https://www.vkremez.com/2017/05/emotet-banking-trojan-malware-analysis.html"
+        ]
+    ],
+    "deobfuscate-decode files or information": [
+        "Adversaries may use Obfuscated Files or Information to hide artifacts of an intrusion from analysis.",
+        [
+            "https://attack.mitre.org/techniques/T1140/"
+        ]
+    ],
+    "jboss vulnerability": [
+        "In March of 2016, adversaries were seen using JexBoss--an open-source utility used for testing and exploiting JBoss application servers. These searches help detect evidence of these attacks, such as network connections to external resources or web services spawning atypical child processes, among others.",
+        [
+            "http://www.deependresearch.org/2016/04/jboss-exploits-view-from-victim.html"
+        ]
+    ],
+    "metasploit": [
+        "The following analytic story highlights content related directly to MetaSploit, which may be default configurations attributed to MetaSploit or behaviors of known knowns that are related.",
+        [
+            "https://github.com/rapid7/metasploit-framework",
+            "https://www.varonis.com/blog/what-is-metasploit"
+        ]
+    ],
+    "trusted developer utilities proxy execution msbuild": [
+        "Monitor and detect techniques used by attackers who leverage the msbuild.exe process to execute malicious code.",
+        [
+            "https://attack.mitre.org/techniques/T1127/001/",
+            "https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1127.001/T1127.001.md",
+            "https://github.com/infosecn1nja/MaliciousMacroMSBuild",
+            "https://github.com/xorrior/RandomPS-Scripts/blob/master/Invoke-ExecuteMSBuild.ps1",
+            "https://lolbas-project.github.io/lolbas/Binaries/Msbuild/",
+            "https://github.com/MHaggis/CBR-Queries/blob/master/msbuild.md"
+        ]
+    ],
+    "3cx supply chain attack": [
+        "On March 29, 2023, CrowdStrike Falcon OverWatch observed unexpected malicious activity emanating from a legitimate, signed binary, 3CXDesktopApp,  a softphone application from 3CX. The malicious activity includes beaconing to actor controlled infrastructure, deployment of second stage payloads, and, in a small number of cases, hands on keyboard activity. (CrowdStrike)",
+        [
+            "https://www.sentinelone.com/blog/smoothoperator-ongoing-campaign-trojanizes-3cx-software-in-software-supply-chain-attack/",
+            "https://www.cisa.gov/news-events/alerts/2023/03/30/supply-chain-attack-against-3cxdesktopapp",
+            "https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/",
+            "https://www.3cx.com/community/threads/crowdstrike-endpoint-security-detection-re-3cx-desktop-app.119934/page-2#post-558898",
+            "https://www.3cx.com/community/threads/3cx-desktopapp-security-alert.119951/",
+            "https://www.elastic.co/security-labs/elastic-users-protected-from-suddenicon-supply-chain-attack",
+            "https://www.volexity.com/blog/2023/03/30/3cx-supply-chain-compromise-leads-to-iconic-incident/"
+        ]
+    ],
+    "blacklotus campaign": [
+        "The first in-the-wild UEFI bootkit bypassing UEFI Secure Boot on fully updated UEFI systems is now a reality",
+        [
+            "https://www.microsoft.com/en-us/security/blog/2023/04/11/guidance-for-investigating-attacks-using-cve-2022-21894-the-blacklotus-campaign/",
+            "https://www.welivesecurity.com/2023/03/01/blacklotus-uefi-bootkit-myth-confirmed/"
+        ]
+    ],
+    "adobe coldfusion arbitrary code execution cve-2023-29298 cve-2023-26360": [
+        "In July 2023, a significant vulnerability, CVE-2023-29298, affecting Adobe ColdFusion was uncovered by Rapid7, shedding light on an access control bypass mechanism. This vulnerability allows attackers to access sensitive ColdFusion Administrator endpoints by exploiting a flaw in the URL path validation. Disturbingly, this flaw can be chained with another critical vulnerability, CVE-2023-26360, which has been actively exploited. The latter enables unauthorized arbitrary code execution and file reading. Adobe has promptly addressed these vulnerabilities, but the intricacies and potential ramifications of their combination underscore the importance of immediate action by organizations. With active exploitation in the wild and the ability to bypass established security measures, the situation is alarming. Organizations are urged to apply the updates provided by Adobe immediately, considering the active threat landscape and the severe implications of these chained vulnerabilities.",
+        [
+            "https://helpx.adobe.com/security/products/coldfusion/apsb23-25.html",
+            "https://twitter.com/stephenfewer/status/1678881017526886400?s=20",
+            "https://www.rapid7.com/blog/post/2023/07/11/cve-2023-29298-adobe-coldfusion-access-control-bypass",
+            "https://www.bleepingcomputer.com/news/security/cisa-warns-of-adobe-coldfusion-bug-exploited-as-a-zero-day/"
+        ]
+    ],
+    "cisa aa24-241a": [
+        "This story covers the tactics of Iran-based cyber actors exploiting U.S. and foreign organizations across multiple sectors, as detailed in CISA Alert AA24-241A. It focuses on their methods of gaining initial access, establishing persistence, and enabling ransomware attacks through vulnerabilities in public-facing networking devices.",
+        [
+            "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-241a",
+            "https://gist.github.com/MHaggis/7e67b659af9148fa593cf2402edebb41",
+            "https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/want-remote-powershell-management-from-your-browser-see-how-pswa/ba-p/255764",
+            "https://learn.microsoft.com/en-us/powershell/module/powershellwebaccess/?view=winserver2012r2-ps",
+            "https://arz101.medium.com/hackthebox-acute-ee0308b9b443"
+        ]
+    ],
+    "hidden cobra malware": [
+        "Monitor for and investigate activities, including the creation or deletion of hidden shares and file writes, that may be evidence of infiltration by North Korean government-sponsored cybercriminals. Details of this activity were reported in DHS Report TA-18-149A.",
+        [
+            "https://web.archive.org/web/20191220004307/https://www.us-cert.gov/HIDDEN-COBRA-North-Korean-Malicious-Cyber-Activity",
+            "https://web.archive.org/web/20220421112536/https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Destructive-Malware-Report.pdf"
+        ]
+    ],
+    "prohibited traffic allowed or protocol mismatch": [
+        "Detect instances of prohibited network traffic allowed in the environment, as well as protocols running on non-standard ports. Both of these types of behaviors typically violate policy and can be leveraged by attackers.",
+        [
+            "http://www.novetta.com/2015/02/advanced-methods-to-detect-advanced-cyber-attacks-protocol-abuse/"
+        ]
+    ],
+    "connectwise screenconnect vulnerabilities": [
+        "This analytic story provides a comprehensive overview of the ConnectWise ScreenConnect vulnerabilities.",
+        [
+            "https://www.huntress.com/blog/a-catastrophe-for-control-understanding-the-screenconnect-authentication-bypass",
+            "https://www.huntress.com/blog/detection-guidance-for-connectwise-cwe-288-2",
+            "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8"
+        ]
+    ],
+    "netsh abuse": [
+        "Detect activities and various techniques associated with the abuse of `netsh.exe`, which can disable local firewall settings or set up a remote connection to a host from an infected system.",
+        [
+            "https://docs.microsoft.com/en-us/previous-versions/tn-archive/bb490939(v=technet.10)",
+            "https://htmlpreview.github.io/?https://github.com/MatthewDemaske/blogbackup/blob/master/netshell.html",
+            "https://blogs.jpcert.or.jp/en/2016/01/windows-commands-abused-by-attackers.html"
+        ]
+    ],
+    "aws defense evasion": [
+        "Identify activity and techniques associated with the Evasion of Defenses within AWS, such as Disabling CloudTrail, Deleting CloudTrail and many others.",
+        [
+            "https://attack.mitre.org/tactics/TA0005/"
+        ]
+    ],
+    "apache struts vulnerability": [
+        "Detect and investigate activities--such as unusually long `Content-Type` length, suspicious java classes and web servers executing suspicious processes--consistent with attempts to exploit Apache Struts vulnerabilities.",
+        [
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/blob/v3.2/dev/rules/REQUEST-944-APPLICATION-ATTACK-JAVA.conf"
+        ]
+    ],
+    "iis components": [
+        "Adversaries may install malicious components that run on Internet Information Services (IIS) web servers to establish persistence.",
+        [
+            "https://www.microsoft.com/en-us/security/blog/2022/12/12/iis-modules-the-evolution-of-web-shells-and-how-to-detect-them/",
+            "https://attack.mitre.org/techniques/T1505/004/",
+            "https://www.crowdstrike.com/wp-content/uploads/2022/05/crowdstrike-iceapple-a-novel-internet-information-services-post-exploitation-framework-1.pdf",
+            "https://unit42.paloaltonetworks.com/unit42-oilrig-uses-rgdoor-iis-backdoor-targets-middle-east/",
+            "https://www.secureworks.com/research/bronze-union",
+            "https://strontic.github.io/xcyclopedia/library/appcmd.exe-055B2B09409F980BF9B5A3969D01E5B2.html"
+        ]
+    ],
+    "confluence data center and confluence server vulnerabilities": [
+        "The following analytic story covers use cases for detecting and investigating potential attacks against Confluence Data Center and Confluence Server.",
+        [
+            "https://confluence.atlassian.com/security/cve-2023-22527-rce-remote-code-execution-vulnerability-in-confluence-data-center-and-confluence-server-1333990257.html"
+        ]
+    ],
+    "aws network acl activity": [
+        "Monitor your AWS network infrastructure for bad configurations and malicious activity. Investigative searches help you probe deeper, when the facts warrant it.",
+        [
+            "https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.html",
+            "https://aws.amazon.com/blogs/security/how-to-help-prepare-for-ddos-attacks-by-reducing-your-attack-surface/"
+        ]
+    ],
+    "dns hijacking": [
+        "Secure your environment against DNS hijacks with searches that help you detect and investigate unauthorized changes to DNS records.",
+        [
+            "https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html",
+            "https://umbrella.cisco.com/blog/2013/04/15/on-the-trail-of-malicious-dynamic-dns-domains/",
+            "http://www.noip.com/blog/2014/07/11/dynamic-dns-can-use-2/",
+            "https://www.splunk.com/blog/2015/08/04/detecting-dynamic-dns-domains-in-splunk.html"
+        ]
+    ],
+    "sneaky active directory persistence tricks": [
+        "Monitor for activities and techniques associated with Windows Active Directory persistence techniques.",
+        [
+            "https://adsecurity.org/?p=1929",
+            "https://www.youtube.com/watch?v=Lz6haohGAMc&feature=youtu.be",
+            "https://adsecurity.org/wp-content/uploads/2015/09/DEFCON23-2015-Metcalf-RedvsBlue-ADAttackAndDefense-Final.pdf",
+            "https://attack.mitre.org/tactics/TA0003/",
+            "https://www.dcshadow.com",
+            "https://gist.github.com/gentilkiwi/dcc132457408cf11ad2061340dcb53c2",
+            "https://www.linkedin.com/pulse/mimikatz-dcsync-event-log-detections-john-dwyer"
+        ]
+    ],
+    "ransomware cloud": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to ransomware. These searches include cloud related objects that may be targeted by malicious actors via cloud providers own encryption features.",
+        [
+            "https://rhinosecuritylabs.com/aws/s3-ransomware-part-1-attack-vector/",
+            "https://github.com/d1vious/git-wild-hunt",
+            "https://www.youtube.com/watch?v=PgzNib37g0M"
+        ]
+    ],
+    "local privilege escalation with krbrelayup": [
+        "KrbRelayUp is a tool that allows local privilege escalation from low-priviliged domain user to local system on domain-joined computers.",
+        [
+            "https://github.com/Dec0ne/KrbRelayUp",
+            "https://gist.github.com/tothi/bf6c59d6de5d0c9710f23dae5750c4b9",
+            "https://googleprojectzero.blogspot.com/2021/10/using-kerberos-for-authentication-relay.html",
+            "https://dirkjanm.io/relaying-kerberos-over-dns-with-krbrelayx-and-mitm6/",
+            "https://github.com/cube0x0/KrbRelay"
+        ]
+    ],
+    "moveit transfer critical vulnerability": [
+        "A critical zero-day vulnerability has been discovered in the MOVEit Transfer file transfer software, widely used by businesses and developers worldwide. The vulnerability has been exploited by unknown threat actors to perform mass data theft from organizations. Progress Software Corporation, the developer of MOVEit, has issued a security advisory urging customers to take immediate action to protect their environments. They recommend blocking external traffic to ports 80 and 445 on the MOVEit server, and to check the c:\\MOVEitTransfer\\wwwroot\\ folder for unusual files. A patch is currently released.",
+        [
+            "https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023",
+            "https://www.reddit.com/r/sysadmin/comments/13wxuej/critical_vulnerability_moveit_file_transfer/",
+            "https://www.bleepingcomputer.com/news/security/new-moveit-transfer-zero-day-mass-exploited-in-data-theft-attacks/",
+            "https://www.reddit.com/r/sysadmin/comments/13wxuej/critical_vulnerability_moveit_file_transfer/",
+            "https://gist.github.com/MHaggis/faa672b1929a23fc48fc0ee47585cc48"
+        ]
+    ],
+    "f5 authentication bypass with tmui": [
+        "Research into leading software revealed vulnerabilities in both Apache Tomcat and the F5 BIG-IP suite. Apache's AJP protocol vulnerability, designated CVE-2022-26377, relates to AJP request smuggling. Successful exploitation enables unauthorized system activities. F5 BIG-IP Virtual Edition exhibited a distinct vulnerability, an authentication bypass in the Traffic Management User Interface (TMUI), resulting in system compromise. Assigned CVE-2023-46747, this vulnerability also arose from request smuggling, bearing similarity to CVE-2022-26377. Given the wide adoption of both Apache Tomcat and F5 products, these vulnerabilities present grave risks to organizations. Remediation and vulnerability detection mechanisms are essential to address these threats effectively.",
+        [
+            "https://www.praetorian.com/blog/refresh-compromising-f5-big-ip-with-request-smuggling-cve-2023-46747/",
+            "https://github.com/projectdiscovery/nuclei-templates/blob/3b0bb71bd627c6c3139e1d06c866f8402aa228ae/http/cves/2023/CVE-2023-46747.yaml"
+        ]
+    ],
+    "cve-2023-36884 office and windows html rce vulnerability": [
+        "CVE-2023-36884 is an unpatched zero-day vulnerability affecting Windows and Microsoft Office products. The vulnerability allows for remote code execution through specially crafted Microsoft Office documents, enabling an attacker to operate in the context of the victim. As of now, there are no security updates available. However, users of Microsoft Defender for Office and the \"Block all Office applications from creating child processes\" Attack Surface Reduction Rule are safeguarded against this exploit. For other users, temporary mitigation can be achieved by adding specific application names to a designated registry key.",
+        [
+            "https://gist.github.com/MHaggis/22ad19081300493e70ce0b873e98b2d0",
+            "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36884",
+            "https://www.bleepingcomputer.com/news/microsoft/microsoft-july-2023-patch-tuesday-warns-of-6-zero-days-132-flaws/",
+            "https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/"
+        ]
+    ],
+    "windows error reporting service elevation of privilege vulnerability": [
+        "In July 2023, CrowdStrike's Falcon Complete managed detection and response (MDR) team uncovered an exploit kit using an unknown vulnerability in the Windows Error Reporting (WER) component. The vulnerability, now identified as CVE-2023-36874, was also independently discovered by Google's Threat Analysis Group. The exploit came to light when suspicious binaries were observed on a European technology system. CrowdStrike's Counter Adversary Operations' analysis revealed a zero-day exploit targeting the WER service, allowing attackers to execute unauthorized code with elevated privileges. The exploit kit seen aimed to spawn a privileged interpreter, displaying the versatility and adaptability of the threat. CrowdStrike has listed some potential indicators of compromise, but these are of low fidelity due to their mutable nature.",
+        [
+            "https://www.crowdstrike.com/blog/falcon-complete-zero-day-exploit-cve-2023-36874/"
+        ]
+    ],
+    "suspicious windows registry activities": [
+        "Monitor and detect registry changes initiated from remote locations, which can be a sign that an attacker has infiltrated your system.",
+        [
+            "https://redcanary.com/blog/windows-registry-attacks-threat-detection/",
+            "https://attack.mitre.org/wiki/Technique/T1112"
+        ]
+    ],
+    "handala wiper": [
+        "Handala Destructive Wiper detection involves monitoring for suspicious activities such as unexpected `regasm` processes, unauthorized AutoIt script executions, and the dropping of malicious drivers. Indicators such as abrupt system slowdowns, and the creation of unknown files or processes. Early detection of these signs is crucial for mitigating the severe impact of this destructive malware.",
+        [
+            "https://www.trellix.com/blogs/research/handalas-wiper-targets-israel/",
+            "https://cyberint.com/blog/threat-intelligence/handala-hack-what-we-know-about-the-rising-threat-actor/"
+        ]
+    ],
+    "ryuk ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the Ryuk ransomware, including looking for file writes associated with Ryuk, Stopping Security Access Manager, DisableAntiSpyware registry key modification, suspicious psexec use, and more.",
+        [
+            "https://www.splunk.com/en_us/blog/security/detecting-ryuk-using-splunk-attack-range.html",
+            "https://www.crowdstrike.com/blog/big-game-hunting-with-ryuk-another-lucrative-targeted-ransomware/",
+            "https://us-cert.cisa.gov/ncas/alerts/aa20-302a"
+        ]
+    ],
+    "suspicious regsvr32 activity": [
+        "Monitor and detect techniques used by attackers who leverage the regsvr32.exe process to execute malicious code.",
+        [
+            "https://attack.mitre.org/techniques/T1218/010/",
+            "https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1218.010/T1218.010.md",
+            "https://lolbas-project.github.io/lolbas/Binaries/Regsvr32/"
+        ]
+    ],
+    "windows registry abuse": [
+        "Windows services are often used by attackers for persistence, privilege escalation, lateral movement, defense evasion, collection of data, a tool for recon, credential dumping and payload impact. This Analytic Story helps you monitor your environment for indications that Windows registry are being modified or created in a suspicious manner.",
+        [
+            "https://attack.mitre.org/techniques/T1112/",
+            "https://redcanary.com/blog/windows-registry-attacks-threat-detection/"
+        ]
+    ],
+    "cisa aa22-277a": [
+        "From November 2021 through January 2022, the Cybersecurity and Infrastructure Security Agency (CISA) responded to advanced persistent threat (APT) activity on a Defense Industrial Base (DIB) Sector organization's enterprise network. During incident response activities, multiple utilities were utilized.",
+        [
+            "https://www.cisa.gov/uscert/ncas/alerts/aa22-277a",
+            "https://www.cisa.gov/uscert/sites/default/files/publications/aa22-277a-impacket-and-exfiltration-tool-used-to-steal-sensitive-information-from-defense-industrial-base-organization.pdf"
+        ]
+    ],
+    "blackbyte ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the BlackByte ransomware, including looking for file writes associated with BlackByte, persistence, initial access, account registry modification and more.",
+        [
+            "https://www.microsoft.com/en-us/security/blog/2023/07/06/the-five-day-job-a-blackbyte-ransomware-intrusion-case-study/"
+        ]
+    ],
+    "zscaler browser proxy threats": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to malicious activity from Zscaler. This also encompasses monitoring for events such as users downloading harmful files or accessing websites that pose a risk to system and network security. Additionally, the narrative extends to the detection of insider threats, ensuring comprehensive protection from both external and internal vulnerabilities. By leveraging Zscaler with Splunk, organizations can fortify their defenses, safeguarding against a wide spectrum of cyber threats and maintaining a secure operational environment.",
+        [
+            "https://threatlibrary.zscaler.com/",
+            "https://help.zscaler.com/zia/about-threat-categories"
+        ]
+    ],
+    "coldroot macos rat": [
+        "Leverage searches that allow you to detect and investigate unusual activities that relate to the ColdRoot Remote Access Trojan that affects MacOS. An example of some of these activities are changing sensative binaries in the MacOS sub-system, detecting process names and executables associated with the RAT, detecting when a keyboard tab is installed on a MacOS machine and more.",
+        [
+            "https://www.intego.com/mac-security-blog/osxcoldroot-and-the-rat-invasion/",
+            "https://objective-see.com/blog/blog_0x2A.html",
+            "https://www.bleepingcomputer.com/news/security/coldroot-rat-still-undetectable-despite-being-uploaded-on-github-two-years-ago/"
+        ]
+    ],
+    "apt29 diplomatic deceptions with wineloader": [
+        "APT29, a sophisticated threat actor linked to the Russian SVR, has expanded its cyber espionage activities to target European diplomats and German political parties. Utilizing a novel backdoor variant, WINELOADER, these campaigns leverage diplomatic-themed lures to initiate infection chains, demonstrating APT29's evolving tactics and interest in geopolitical intelligence. The operations, marked by their low volume and high precision, underscore the broad threat APT29 poses to Western political and diplomatic entities.",
+        [
+            "https://www.mandiant.com/resources/blog/apt29-wineloader-german-political-parties",
+            "https://www.zscaler.com/blogs/security-research/european-diplomats-targeted-spikedwine-wineloader"
+        ]
+    ],
+    "ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to ransomware--spikes in SMB traffic, suspicious wevtutil usage, the presence of common ransomware extensions, and system processes run from unexpected locations, and many others.",
+        [
+            "https://web.archive.org/web/20190826231258/https://www.carbonblack.com/2017/06/28/carbon-black-threat-research-technical-analysis-petya-notpetya-ransomware/",
+            "https://www.splunk.com/blog/2017/06/27/closing-the-detection-to-mitigation-gap-or-to-petya-or-notpetya-whocares-.html"
+        ]
+    ],
+    "suspicious cloud instance activities": [
+        "Monitor your cloud infrastructure provisioning activities for behaviors originating from unfamiliar or unusual locations. These behaviors may indicate that malicious activities are occurring somewhere within your cloud environment.",
+        [
+            "https://d0.awsstatic.com/whitepapers/aws-security-best-practices.pdf"
+        ]
+    ],
+    "openssl cve-2022-3602": [
+        "OpenSSL recently disclosed two vulnerabilities CVE-2022-3602 and CVE-2022-3786. CVE-2022-3602 is a X.509 Email Address 4-byte Buffer Overflow where puny code is utilized. This only affects OpenSSL 3.0.0 - 3.0.6.",
+        [
+            "https://www.openssl.org/blog/blog/2022/11/01/email-address-overflows/",
+            "https://github.com/advisories/GHSA-h8jm-2x53-xhp5",
+            "https://community.emergingthreats.net/t/out-of-band-ruleset-update-summary-2022-11-01/117",
+            "https://github.com/corelight/CVE-2022-3602/tree/master/scripts"
+        ]
+    ],
+    "cisa aa22-257a": [
+        "The Iranian government-sponsored APT actors are actively targeting a broad range of victims across multiple U.S. critical infrastructure sectors, including the Transportation Sector and the Healthcare and Public Health Sector, as well as Australian organizations.",
+        [
+            "https://www.cisa.gov/uscert/ncas/alerts/aa21-321a",
+            "https://www.cisa.gov/uscert/ncas/alerts/aa22-257a",
+            "https://www.ic3.gov/Media/News/2021/210527.pdf",
+            "https://www.us-cert.gov/sites/default/files/AA22-257A.stix.xml",
+            "https://www.us-cert.cisa.gov/iran"
+        ]
+    ],
+    "dev sec ops": [
+        "This story is focused around detecting attacks on a DevSecOps lifeccycle which consists of the phases plan, code, build, test, release, deploy, operate and monitor.",
+        [
+            "https://www.redhat.com/en/topics/devops/what-is-devsecops"
+        ]
+    ],
+    "f5 big-ip vulnerability cve-2022-1388": [
+        "CVE-2022-1388 is a unauthenticated remote code execution vulnerablity against BIG-IP iControl REST API.",
+        [
+            "https://github.com/dk4trin/templates-nuclei/blob/main/CVE-2022-1388.yaml",
+            "https://www.randori.com/blog/vulnerability-analysis-cve-2022-1388/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1388",
+            "https://twitter.com/da_667/status/1523770267327250438?s=20&t=-JnB_aNWuJFsmcOmxGUWLQ",
+            "https://github.com/horizon3ai/CVE-2022-1388/blob/main/CVE-2022-1388.py"
+        ]
+    ],
+    "njrat": [
+        "NjRat is a notorious remote access trojan (RAT) predominantly wielded by malicious operators to infiltrate and wield remote control over compromised systems. This analytical story harnesses targeted search methodologies to uncover and investigate activities that could be indicative of NjRAT's presence. These activities include tracking file write operations for dropped files, scrutinizing registry modifications aimed at establishing persistence mechanisms, monitoring suspicious processes, self-deletion behaviors, browser credential parsing, firewall configuration alterations, spread itself via removable drive and an array of other potentially malicious actions.",
+        [
+            "https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-malware/what-is-njrat-malware/#:~:text=NJRat%20%E2%80%94%20also%20known%20as%20Bladabindi,malware%20variant%20in%20March%202023.",
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.njrat"
+        ]
+    ],
+    "jetbrains teamcity vulnerabilities": [
+        "This story provides a high-level overview of JetBrains TeamCity vulnerabilities and how to detect and respond to them using Splunk.",
+        [
+            "https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities-fixed/",
+            "https://blog.jetbrains.com/teamcity/2024/03/teamcity-2023-11-4-is-out/",
+            "https://blog.jetbrains.com/teamcity/2024/03/additional-critical-security-issues-affecting-teamcity-on-premises-cve-2024-27198-and-cve-2024-27199-update-to-2023-11-4-now/"
+        ]
+    ],
+    "security solution tampering": [
+        "This analytic story focuses on identifying behaviors associated with the misuse of security solution utilities, such as antivirus (AV) and endpoint detection and response (EDR) tools, on endpoints. Adversaries often exploit these utilities to disable critical security services, modify configurations, or execute defense evasion actions. Such activities are typically aimed at bypassing detection mechanisms, disrupting incident response efforts, and maintaining persistence within a compromised environment. By monitoring for these suspicious behaviors, this story empowers security teams to detect, investigate, and respond to potential tampering or manipulation of endpoint defenses effectively.",
+        [
+            "https://www.cisco.com/c/en/us/support/docs/security/amp-endpoints/213690-amp-for-endpoint-command-line-switches.html",
+            "https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/appendices/windows-commands-for-the-endpoint-protection-clien-v9567615-d19e6200.html",
+            "https://learn.microsoft.com/en-us/powershell/module/defender/set-mppreference?view=windowsserver2025-ps",
+            "https://support.kaspersky.com/keswin/11.1.1/en-US/178723.htm",
+            "https://ppn.snovvcrash.rocks/pentest/infrastructure/ad/av-edr-evasion/defender"
+        ]
+    ],
+    "qakbot": [
+        "QakBot is a modular banking trojan that has been used primarily by financially-motivated actors since at least 2007. QakBot is continuously maintained and developed and has evolved from an information stealer into a delivery agent for ransomware (ref. MITRE ATT&CK).",
+        [
+            "https://www.cisa.gov/sites/default/files/publications/202010221030_QakBot%20TLPWHITE.pdf",
+            "https://malpedia.caad.fkie.fraunhofer.de/details/win.QakBot",
+            "https://securelist.com/QakBot-technical-analysis/103931/",
+            "https://www.fortinet.com/blog/threat-research/new-variant-of-QakBot-spread-by-phishing-emails",
+            "https://attack.mitre.org/software/S0650/",
+            "https://cybersecurity.att.com/blogs/labs-research/the-rise-of-qakbot"
+        ]
+    ],
+    "sql server abuse": [
+        "This analytic story addresses various techniques used by threat actors to abuse Microsoft SQL Server for maintaining persistence, executing malicious commands, and exfiltrating data. It focuses on detecting suspicious SQLCMD usage, startup procedure modifications, DLL procedure loads, and other SQL Server abuse patterns that may indicate compromise.",
+        [
+            "https://www.microsoft.com/en-us/security/blog/2023/10/03/defending-new-vectors-threat-actors-attempt-sql-server-to-cloud-lateral-movement/",
+            "https://www.netspi.com/blog/technical-blog/network-pentesting/hijacking-sql-server-credentials-with-agent-jobs-for-domain-privilege-escalation/",
+            "https://www.huntress.com/blog/attacking-mssql-servers",
+            "https://www.netspi.com/blog/technical-blog/network-pentesting/hacking-sql-server-stored-procedures-part-2-user-impersonation/",
+            "https://www.slideshare.net/slideshow/def-con-31-demo-labs-2023-abusing-microsoft-sql-server-with-sqlrecon-259778942/259778942#1"
+        ]
+    ],
+    "disabling security tools": [
+        "Looks for activities and techniques associated with the disabling of security tools on a Windows system, such as suspicious `reg.exe` processes, processes launching netsh, and many others.",
+        [
+            "https://attack.mitre.org/wiki/Technique/T1089",
+            "https://blog.malwarebytes.com/cybercrime/2015/11/vonteera-adware-uses-certificates-to-disable-anti-malware/",
+            "https://web.archive.org/web/20220425194457/https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Tools-Report.pdf"
+        ]
+    ],
+    "windows system binary proxy execution msiexec": [
+        "Adversaries may abuse msiexec.exe to proxy execution of malicious payloads. Msiexec.exe is the command-line utility for the Windows Installer and is thus commonly associated with executing installation packages (.msi).",
+        [
+            "https://attack.mitre.org/techniques/T1218/007/"
+        ]
+    ],
+    "windows post-exploitation": [
+        "This analytic story identifies popular Windows post exploitation tools for example winpeas.bat, winpeas.exe, WinPrivCheck.bat and many more.",
+        [
+            "https://www.microsoft.com/en-us/security/blog/2022/10/14/new-prestige-ransomware-impacts-organizations-in-ukraine-and-poland/"
+        ]
+    ],
+    "lumma stealer": [
+        "Lumma Stealer is a sophisticated information-stealing malware that has been operating as a Malware-as-a-Service (MaaS) platform since 2022. Recent campaigns in 2024 have shown increased sophistication in distribution methods, particularly through fake CAPTCHA verification pages, cracked game downloads, and phishing emails targeting GitHub users. The malware is designed to steal sensitive information including browser credentials, cryptocurrency wallet data, and password manager archives.",
+        [
+            "https://www.cloudsek.com/blog/unmasking-the-danger-lumma-stealer-malware-exploits-fake-captcha-pages",
+            "https://medium.com/@shaherzakaria8/downloading-trojan-lumma-infostealer-through-capatcha-1f25255a0e71",
+            "https://securelist.com/fake-captcha-delivers-lumma-amadey/114312/",
+            "https://www.bleepingcomputer.com/news/security/clever-github-scanner-campaign-abusing-repos-to-push-malware/",
+            "https://www.trendmicro.com/en_us/research/23/j/beware-lumma-stealer-distributed-via-discord-cdn-.html",
+            "https://redcanary.com/blog/threat-intelligence/intelligence-insights-october-2024/",
+            "https://www.forensafe.com/blogs/runmrukey.html",
+            "https://mandarnaik016.in/blog/2024-10-05-malware-analysis-lumma-stealer/",
+            "https://www.mcafee.com/blogs/other-blogs/mcafee-labs/behind-the-captcha-a-clever-gateway-of-malware/",
+            "https://denwp.com/dissecting-lumma-malware/",
+            "https://www.mcafee.com/blogs/other-blogs/mcafee-labs/behind-the-captcha-a-clever-gateway-of-malware/"
+        ]
+    ],
+    "vmware esxi ad integration authentication bypass cve-2024-37085": [
+        "This analytic story addresses the VMware ESXi Active Directory Integration Authentication Bypass vulnerability (CVE-2024-37085). It detects attempts to exploit this flaw, which allows attackers with sufficient AD permissions to gain full access to ESXi hosts by recreating the 'ESX Admins' group after deletion.",
+        [
+            "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/24505",
+            "https://www.microsoft.com/en-us/security/blog/2024/07/29/ransomware-operators-exploit-esxi-hypervisor-vulnerability-for-mass-encryption/",
+            "https://www.securityweek.com/microsoft-says-ransomware-gangs-exploiting-just-patched-vmware-esxi-flaw/"
+        ]
+    ],
+    "aws identity and access management account takeover": [
+        "Identify activity and techniques associated with accessing credential files from AWS resources, monitor unusual authentication related activities to the AWS Console and other services such as RDS.",
+        [
+            "https://attack.mitre.org/tactics/TA0006/"
+        ]
+    ],
+    "earth estries": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to Earth Estries, a sophisticated threat actor targeting various sectors with espionage-focused campaigns. Monitor for indicators such as spear-phishing emails, unauthorized access attempts, and lateral movement within your network. Investigate anomalous data exfiltration patterns and command-and-control (C2) traffic consistent with known tactics, techniques, and procedures (TTPs) of this group. Combining threat intelligence with advanced monitoring tools helps identify potential Earth Estries activity early, enabling swift response to mitigate risks effectively.",
+        [
+            "https://www.trendmicro.com/en_nl/research/24/k/earth-estries.html"
+        ]
+    ],
+    "forest blizzard": [
+        "CERT-UA has unveiled a cyberattack on Ukraine's energy infrastructure, orchestrated via deceptive emails. These emails, once accessed, lead to a multi-stage cyber operation downloading and executing malicious payloads. Concurrently, Zscaler's \"Steal-It\" campaign detection revealed striking similarities, hinting at a shared origin - APT28 or Fancy Bear. This notorious group, linked to Russia's GRU, utilizes legitimate platforms like Mockbin, making detection challenging. Their operations underline the evolving cyber threat landscape and stress the importance of advanced defenses.",
+        [
+            "https://cert.gov.ua/article/5702579",
+            "https://www.zscaler.com/blogs/security-research/steal-it-campaign",
+            "https://attack.mitre.org/groups/G0007/"
+        ]
+    ],
+    "volt typhoon": [
+        "This analytic story contains detections that allow security analysts to detect and investigate unusual activities that might relate to the \"Volt Typhoon\" group targeting critical infrastructure organizations in United States and Guam. The affected organizations include the communications, manufacturing, utility, transportation, construction, maritime, government, information technology, and education sectors. This Analytic story looks for suspicious process execution, lolbin execution, command-line activity, lsass dump and many more.",
+        [
+            "https://www.microsoft.com/en-us/security/blog/2023/05/24/volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques/"
+        ]
+    ],
+    "lockbit ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the LockBit ransomware, including looking for file writes (file encryption and ransomware notes), deleting services, terminating processes, registry key modification and more.",
+        [
+            "https://blogs.vmware.com/security/2022/10/lockbit-3-0-also-known-as-lockbit-black.html",
+            "https://news.sophos.com/en-us/2020/04/24/lockbit-ransomware-borrows-tricks-to-keep-up-with-revil-and-maze/",
+            "https://www.cybereason.com/blog/threat-analysis-report-lockbit-2.0-all-paths-lead-to-ransom",
+            "https://www.trendmicro.com/en_us/research/22/g/lockbit-ransomware-group-augments-its-latest-variant--lockbit-3-.html"
+        ]
+    ],
+    "active directory lateral movement": [
+        "Detect and investigate tactics, techniques, and procedures around how attackers move laterally within an Active Directory environment. Since lateral movement is often a necessary step in a breach, it is important for cyber defenders to deploy detection coverage.",
+        [
+            "https://www.fireeye.com/blog/executive-perspective/2015/08/malware_lateral_move.html",
+            "http://www.irongeek.com/i.php?page=videos/derbycon7/t405-hunting-lateral-movement-for-fun-and-profit-mauricio-velazco"
+        ]
+    ],
+    "backdoor pingpong": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to Backdoor.PingPong malware, a legacy threat that provides unauthorized remote access to compromised systems. Look for signs such as unexpected pings or ICMP traffic patterns that deviate from normal behavior. Investigate unauthorized processes or network connections, particularly those attempting to establish external communication. Combining threat intelligence with behavioral analytics helps identify this backdoor\u00e2\u20ac\u2122s attempts to exploit vulnerabilities. Early detection and response are critical to mitigating the risk of this malware.",
+        [
+            "https://www.crowdstrike.com/en-us/blog/an-analysis-of-lightbasin-telecommunications-attacks/"
+        ]
+    ],
+    "office 365 collection techniques": [
+        "Monitor for activities and anomalies indicative of potential collection techniques within Office 365 environments.",
+        []
+    ],
+    "kubernetes security": [
+        "Kubernetes, as a container orchestration platform, faces unique security challenges. This story explores various tactics and techniques adversaries use to exploit Kubernetes environments, including attacking the control plane, exploiting misconfigurations, and compromising containerized applications.",
+        [
+            "https://kubernetes.io/docs/concepts/security/"
+        ]
+    ],
+    "suspicious rundll32 activity": [
+        "Monitor and detect techniques used by attackers who leverage rundll32.exe to execute arbitrary malicious code.",
+        [
+            "https://attack.mitre.org/techniques/T1218/011/",
+            "https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1218.011/T1218.011.md",
+            "https://lolbas-project.github.io/lolbas/Binaries/Rundll32"
+        ]
+    ],
+    "suspicious aws traffic": [
+        "Leverage these searches to monitor your AWS network traffic for evidence of anomalous activity and suspicious behaviors, such as a spike in blocked outbound traffic in your virtual private cloud (VPC).",
+        [
+            "https://rhinosecuritylabs.com/aws/hiding-cloudcobalt-strike-beacon-c2-using-amazon-apis/"
+        ]
+    ],
+    "compromised windows host": [
+        "Monitor for activities and techniques associated with Compromised Windows Host attacks. A compromised Windows host refers to a computer system running the Windows operating system that has been infiltrated or attacked by unauthorized parties. Such compromises often result in security breaches, data theft, malware infections, or unauthorized access, posing risks to sensitive information and system integrity.",
+        []
+    ],
+    "clop ransomware": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the Clop ransomware, including looking for file writes associated with Clope, encrypting network shares, deleting and resizing shadow volume storage, registry key modification, deleting of security logs, and more.",
+        [
+            "https://www.hhs.gov/sites/default/files/analyst-note-cl0p-tlp-white.pdf",
+            "https://securityaffairs.co/wordpress/115250/data-breach/qualys-clop-ransomware.html",
+            "https://www.darkreading.com/attacks-breaches/qualys-is-the-latest-victim-of-accellion-data-breach/d/d-id/1340323"
+        ]
+    ],
+    "aws security hub alerts": [
+        "This story is focused around detecting Security Hub alerts generated from AWS",
+        [
+            "https://aws.amazon.com/security-hub/features/"
+        ]
+    ],
+    "trusted developer utilities proxy execution": [
+        "Monitor and detect behaviors used by attackers who leverage trusted developer utilities to execute malicious code.",
+        [
+            "https://attack.mitre.org/techniques/T1127/",
+            "https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1218/T1218.md",
+            "https://lolbas-project.github.io/lolbas/Binaries/Microsoft.Workflow.Compiler/"
+        ]
+    ],
+    "samaccountname spoofing and domain controller impersonation": [
+        "Monitor for activities and techniques associated with the exploitation of the sAMAccountName Spoofing (CVE-2021-42278) and Domain Controller Impersonation (CVE-2021-42287) vulnerabilities.",
+        [
+            "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42278",
+            "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42287",
+            "https://exploit.ph/cve-2021-42287-cve-2021-42278-weaponisation.html"
+        ]
+    ],
+    "citrix sharefile rce cve-2023-24489": [
+        "A critical vulnerability has been discovered in ShareFile's Storage Zones Controller software (CVE-2023-24489), used by numerous organizations for file sharing and storage. The vulnerability allows unauthenticated arbitrary file upload and remote code execution due to a cryptographic bug in the software's encryption but lack of authentication system. The risk comes from a failing encryption check, allowing potential cybercriminals to upload malicious files to the server. The bug was found in the Documentum Connector's .aspx files. The security risk has a potentially large impact due to the software's wide use and the sensitivity of the stored data. Citrix has released a security update to address this issue.",
+        [
+            "https://www.greynoise.io/blog/introducing-cve-2023-24489-a-critical-citrix-sharefile-rce-vulnerability",
+            "https://blog.assetnote.io/2023/07/04/citrix-sharefile-rce/"
+        ]
+    ],
+    "microsoft support diagnostic tool vulnerability cve-2022-30190": [
+        "On Monday May 30, 2022, Microsoft issued CVE-2022-30190 regarding the Microsoft Support Diagnostic Tool (MSDT) in Windows vulnerability.",
+        [
+            "https://msrc-blog.microsoft.com/2022/05/30/guidance-for-cve-2022-30190-microsoft-support-diagnostic-tool-vulnerability/",
+            "https://isc.sans.edu/diary/rss/28694",
+            "https://doublepulsar.com/follina-a-microsoft-office-code-execution-vulnerability-1a47fce5629e",
+            "https://twitter.com/nao_sec/status/1530196847679401984?s=20&t=ZiXYI4dQuA-0_dzQzSUb3A",
+            "https://app.any.run/tasks/713f05d2-fe78-4b9d-a744-f7c133e3fafb/",
+            "https://www.virustotal.com/gui/file/4a24048f81afbe9fb62e7a6a49adbd1faf41f266b5f9feecdceb567aec096784/detection",
+            "https://strontic.github.io/xcyclopedia/library/msdt.exe-152D4C9F63EFB332CCB134C6953C0104.html"
+        ]
+    ],
+    "linux living off the land": [
+        "Linux Living Off The Land consists of binaries that may be used to bypass local security restrictions within misconfigured systems.",
+        [
+            "https://gtfobins.github.io/"
+        ]
+    ],
+    "network discovery": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the network discovery, including looking for network configuration, settings such as IP, MAC address, firewall settings and many more.",
+        [
+            "https://attack.mitre.org/techniques/T1016/",
+            "https://www.welivesecurity.com/wp-content/uploads/2021/01/ESET_Kobalos.pdf",
+            "https://researchcenter.paloaltonetworks.com/2018/09/unit42-xbash-combines-botnet-ransomware-coinmining-worm-targets-linux-windows/"
+        ]
+    ],
+    "darkgate malware": [
+        "Telekom Security CTI has uncovered a new phishing-driven malware campaign distributing DarkGate malware. This campaign utilizes stolen email threads to trick users into downloading malicious payloads via hyperlinks. An initial false link to Emotet stirred the security community, but deeper analysis confirmed its true identity as DarkGate, with characteristics like AutoIt scripts and a known command-and-control protocol. This report by Fabian Marquardt details the intricate infection mechanisms, including MSI and VBS file deliveries, sophisticated evasion techniques, and a robust configuration extraction method surpassing current standards. The single developer behind DarkGate, active on cybercrime forums, has shifted the malware's use from private to a rent-out model, implying an expected rise in its deployment. Researchers have also developed a decryption technique for the DarkGate malware, which aids in static analysis and detection, though it requires careful validation to avoid false positives.",
+        [
+            "https://github.security.telekom.com/2023/08/darkgate-loader.html",
+            "https://redcanary.com/blog/intelligence-insights-october-2023"
+        ]
+    ],
+    "xmrig": [
+        "Leverage searches that allow you to detect and investigate unusual activities that might relate to the xmrig monero, including looking for file writes associated with its payload, process command-line, defense evasion (killing services, deleting users, modifying files or folder permission, killing other malware or other coin miner) and hacking tools including Telegram as mean of Command And Control (C2) to download other files. Adversaries may leverage the resources of co-opted systems in order to solve resource intensive problems which may impact system and/or hosted service availability. One common purpose for Resource Hijacking is to validate transactions of cryptocurrency networks and earn virtual currency. Adversaries may consume enough system resources to negatively impact and/or cause affected machines to become unresponsive. (1) Servers and cloud-based (2) systems are common targets because of the high potential for available resources, but user endpoint systems may also be compromised and used for Resource Hijacking and cryptocurrency mining.",
+        [
+            "https://github.com/xmrig/xmrig",
+            "https://www.getmonero.org/resources/user-guides/mine-to-pool.html",
+            "https://thedfirreport.com/2020/04/20/sqlserver-or-the-miner-in-the-basement/",
+            "https://blog.checkpoint.com/2021/03/11/february-2021s-most-wanted-malware-trickbot-takes-over-following-emotet-shutdown/"
+        ]
+    ],
+    "valleyrat": [
+        "This analytic story contains detections that allow security analysts to detect and investigate unusual activities that might be related to ValleyRAT malware. ValleyRAT is a remote access trojan (RAT) known for targeting specific organizations and individuals to gain unauthorized access to systems. It enables attackers to execute commands, steal sensitive data, and manipulate files. This malware often uses phishing emails or malicious attachments to infect systems. Detecting ValleyRAT early is crucial to preventing data breaches and further exploitation. Analysts can use behavioral analysis and signature-based detection to mitigate its impact.",
+        [
+            "https://www.proofpoint.com/us/blog/threat-insight/chinese-malware-appears-earnest-across-cybercrime-threat-landscape",
+            "https://www.fortinet.com/blog/threat-research/valleyrat-campaign-targeting-chinese-speakers"
+        ]
+    ],
+    "suspicious aws s3 activities": [
+        "Use the searches in this Analytic Story using Cloudtrail logs to to monitor your AWS S3 buckets for evidence of anomalous activity and suspicious behaviors, such as detecting open S3 buckets and buckets being accessed from a new IP, permission and policy updates to the bucket, potential misuse of other services leading to data being leaked.",
+        [
+            "https://github.com/nagwww/s3-leaks",
+            "https://www.tripwire.com/state-of-security/security-data-protection/cloud/public-aws-s3-buckets-writable/"
+        ]
+    ],
+    "azure active directory privilege escalation": [
+        "Monitor for activities and techniques associated with Privilege Escalation attacks within Azure Active Directory tenants.",
+        [
+            "https://attack.mitre.org/tactics/TA0003/",
+            "https://cloudbrothers.info/en/azure-attack-paths/",
+            "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/PrivEsc/",
+            "https://posts.specterops.io/azure-privilege-escalation-via-service-principal-abuse-210ae2be2a5"
+        ]
+    ],
+    "windows dns sigred cve-2020-1350": [
+        "Uncover activity consistent with CVE-2020-1350, or SIGRed. Discovered by Checkpoint researchers, this vulnerability affects Windows 2003 to 2019, and is triggered by a malicious DNS response (only affects DNS over TCP). An attacker can use the malicious payload to cause a buffer overflow on the vulnerable system, leading to compromise.  The included searches in this Analytic Story are designed to identify the large response payload for SIG and KEY DNS records which can be used for the exploit.",
+        [
+            "https://research.checkpoint.com/2020/resolving-your-way-into-domain-admin-exploiting-a-17-year-old-bug-in-windows-dns-servers/",
+            "https://support.microsoft.com/en-au/help/4569509/windows-dns-server-remote-code-execution-vulnerability"
+        ]
+    ],
+    "windows defense evasion tactics": [
+        "Detect tactics used by malware to evade defenses on Windows endpoints. A few of these include suspicious `reg.exe` processes, files hidden with `attrib.exe` and disabling user-account control, among many others",
+        [
+            "https://attack.mitre.org/wiki/Defense_Evasion"
+        ]
+    ],
+    "bishopfox sliver adversary emulation framework": [
+        "The following analytic story providers visibility into the latest adversary TTPs in regard to the use of Sliver. Sliver has gained more traction with adversaries as it is often seen as an alternative to Cobalt Strike. It is designed to be scalable and can be used by organizations of all sizes to perform security testing. Sliver is highly modular and contains an Extension package manager (armory) allowing easy install (automatic compilation) of various 3rd party tools such as BOFs and .NET tooling like Ghostpack (Rubeus, Seatbelt, SharpUp, Certify, and so forth) (CyberReason,2023).",
+        [
+            "https://www.cybereason.com/blog/sliver-c2-leveraged-by-many-threat-actors",
+            "https://www.ncsc.gov.uk/files/Advisory%20Further%20TTPs%20associated%20with%20SVR%20cyber%20actors.pdf",
+            "https://www.proofpoint.com/uk/blog/security-briefs/ta551-uses-sliver-red-team-tool-new-activity",
+            "https://www.cybereason.com/blog/threat-analysis-report-bumblebee-loader-the-high-road-to-enterprise-domain-control",
+            "https://github.com/sliverarmory/armory",
+            "https://github.com/BishopFox/sliver"
+        ]
+    ],
+    "container implantation monitoring and investigation": [
+        "Use the searches in this story to monitor your Kubernetes registry repositories for upload, and deployment of potentially vulnerable, backdoor, or implanted containers. These searches provide information on source users, destination path, container names and repository names. The searches provide context to address Mitre T1525 which refers to container implantation upload to a company's repository either in Amazon Elastic Container Registry, Google Container Registry and Azure Container Registry.",
+        [
+            "https://github.com/splunk/cloud-datamodel-security-research"
+        ]
+    ],
+    "aws suspicious provisioning activities": [
+        "Monitor your AWS provisioning activities for behaviors originating from unfamiliar or unusual locations. These behaviors may indicate that malicious activities are occurring somewhere within your network.",
+        [
+            "https://d0.awsstatic.com/whitepapers/aws-security-best-practices.pdf"
+        ]
+    ],
+    "common phishing frameworks": [
+        "Detect DNS and web requests to fake websites generated by the EvilGinx2 toolkit. These websites are designed to fool unwitting users who have clicked on a malicious link in a phishing email.",
+        [
+            "https://github.com/kgretzky/evilginx2",
+            "https://attack.mitre.org/techniques/T1192/",
+            "https://breakdev.org/evilginx-advanced-phishing-with-two-factor-authentication-bypass/"
+        ]
+    ],
+    "monitor backup solution": [
+        "Address common concerns when monitoring your backup processes. These searches can help you reduce risks from ransomware, device theft, or denial of physical access to a host by backing up data on endpoints.",
+        [
+            "https://www.carbonblack.com/2016/03/04/tracking-locky-ransomware-using-carbon-black/"
+        ]
+    ],
+    "web fraud detection": [
+        "Monitor your environment for activity consistent with common attack techniques bad actors use when attempting to compromise web servers or other web-related assets.",
+        [
+            "https://www.fbi.gov/scams-and-safety/common-fraud-schemes/internet-fraud",
+            "https://www.fbi.gov/news/stories/2017-internet-crime-report-released-050718"
+        ]
+    ],
+    "suspicious aws ec2 activities": [
+        "Use the searches in this Analytic Story to monitor your AWS EC2 instances for evidence of anomalous activity and suspicious behaviors, such as EC2 instances that originate from unusual locations or those launched by previously unseen users (among others). Included investigative searches will help you probe more deeply, when the information warrants it.",
+        [
+            "https://d0.awsstatic.com/whitepapers/aws-security-best-practices.pdf"
+        ]
+    ],
+    "spectre and meltdown vulnerabilities": [
+        "Assess and mitigate your systems' vulnerability to Spectre and Meltdown exploitation with the searches in this Analytic Story.",
+        [
+            "https://meltdownattack.com/"
+        ]
+    ],
+    "monitor for unauthorized software": [
+        "Identify and investigate prohibited/unauthorized software or processes that may be concealing malicious behavior within your environment.",
+        [
+            "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/"
+        ]
+    ],
+    "lateral movement": [
+        "DEPRECATED IN FAVOR OF ACTIVE DIRECTORY LATERAL MOVEMENT. Detect and investigate tactics, techniques, and procedures around how attackers move laterally within the enterprise. Because lateral movement can expose the adversary to detection, it should be an important focus for security analysts.",
+        [
+            "https://www.fireeye.com/blog/executive-perspective/2015/08/malware_lateral_move.html"
+        ]
+    ],
+    "host redirection": [
+        "Detect evidence of tactics used to redirect traffic from a host to a destination other than the one intended--potentially one that is part of an adversary's attack infrastructure. An example is redirecting communications regarding patches and updates or misleading users into visiting a malicious website.",
+        [
+            "https://blog.malwarebytes.com/cybercrime/2016/09/hosts-file-hijacks/"
+        ]
+    ],
+    "office 365 detections": [
+        "Monitor for activities and anomalies indicative of potential threats within Office 365 environments.",
+        [
+            "https://i.blackhat.com/USA-20/Thursday/us-20-Bienstock-My-Cloud-Is-APTs-Cloud-Investigating-And-Defending-Office-365.pdf",
+            "https://attack.mitre.org/matrices/enterprise/cloud/office365/",
+            "https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-120a"
+        ]
+    ],
+    "unusual aws ec2 modifications": [
+        "Identify unusual changes to your AWS EC2 instances that may indicate malicious activity. Modifications to your EC2 instances by previously unseen users is an example of an activity that may warrant further investigation.",
+        [
+            "https://d0.awsstatic.com/whitepapers/aws-security-best-practices.pdf"
+        ]
+    ],
+    "kubernetes sensitive role activity": [
+        "This story addresses detection and response around Sensitive Role usage within a Kubernetes clusters against cluster resources and namespaces.",
+        [
+            "https://www.splunk.com/en_us/blog/security/approaching-kubernetes-security-detecting-kubernetes-scan-with-splunk.html"
+        ]
+    ],
+    "aws cryptomining": [
+        "Monitor your AWS EC2 instances for activities related to cryptojacking/cryptomining. New instances that originate from previously unseen regions, users who launch abnormally high numbers of instances, or EC2 instances started by previously unseen users are just a few examples of potentially malicious behavior.",
+        [
+            "https://d0.awsstatic.com/whitepapers/aws-security-best-practices.pdf"
+        ]
+    ],
+    "nexus apt threat activity": [
+        "This story is deprecated in favour of analytic story China-Nexus Threat Activity. Leverage searches that allow you to detect and investigate unusual activities that might relate to Nexus, an advanced persistent threat (APT) group known for its stealth and strategic targeting of high-value sectors. Monitor for indicators such as spear-phishing campaigns, exploitation of zero-day vulnerabilities, and unauthorized lateral movement within your network. Investigate anomalous data exfiltration, encrypted communications, and behaviors aligning with their known tactics, techniques, and procedures (TTPs). Combining threat intelligence with real-time monitoring helps identify and respond to Nexus APT activity, minimizing potential damage and data loss.",
+        [
+            "https://news.sophos.com/en-us/2024/10/31/pacific-rim-neutralizing-china-based-threat/",
+            "https://www.wsj.com/tech/cybersecurity/typhoon-china-hackers-military-weapons-97d4ef95?st=oe1KKi&reflink=desktopwebshare _permalink",
+            "https://www.judiciary.senate.gov/imo/media/doc/2024-11-19_pm_-_testimony_-_meyers.pdf",
+            "https://go.crowdstrike.com/rs/281-OBQ-266/images/GlobalThreatReport2024.pdf"
+        ]
+    ]
+}

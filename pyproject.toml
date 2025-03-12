@@ -1,0 +1,24 @@
+[project]
+name = "scout-helper"
+version = "0.1.0"
+description = "A Simple utility Tool in developing Splunk correlation searches base on Splunk Security Content metadata."
+authors = [
+    {name = "Teoderick Contreras",email = "tcontreras@splunk.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "streamlit (>=1.43.0,<2.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "numpy (>=2.2.3,<3.0.0)",
+    "pillow (>=11.1.0,<12.0.0)",
+    "streamlit-image-select (>=0.6.0,<0.7.0)",
+    "streamlit-extras (>=0.5.5,<0.6.0)",
+    "attackcti (>=0.5.4,<0.6.0)",
+    "chardet (>=5.2.0,<6.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
