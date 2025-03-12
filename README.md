@@ -45,7 +45,7 @@ The following steps outline the essential configuration required to ensure prope
 
 ### Configuration
 
-In the Configuration tab (as shown in Figure 1), the user must specify three key folder paths where this tool parses metadata to generate correlation searches:
+In the Configuration tab, the user must specify three key folder paths where this tool parses metadata to generate correlation searches:
 
 - **Security Content Detection Directory Path** : The folder path containing Splunk Security Content detections.
 - **ATT&CK CTI Repository Directory Path**      : The folder path where the cloned attackcti repository is located.
@@ -54,12 +54,15 @@ In the Configuration tab (as shown in Figure 1), the user must specify three key
   
 All other fields can be left as they are.
 
+
 <img src="assets/config.png">
+
 
 ### Data Frame Generation
 
 This lightweight utility tool parses selected or all Splunk detections from the Security Content Detection folder. Thousands of YAML files are processed and converted into a structured DataFrame, enabling efficient parsing, filtering, and data visualization.
 
-Figure 2 illustrates how this tool allows users to select specific detections to focus on. In this example, all detections are chosen.
+Figure below, illustrates how this tool allows users to select specific detections to focus on. In this example, all detections are chosen.
+
 
 <img src="assets/data.png">
