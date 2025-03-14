@@ -67,3 +67,10 @@ Figure below, illustrates how this tool allows users to select specific detectio
 
 
 <img src="assets/data.png">
+
+
+### Short DEMO
+
+Below is a brief demo showcasing how the SCOUT utility tool can be used to generate a correlation search. This search can then be enhanced, modified, and tested to suit the specific needs of your production environment.
+
+<img src="assets/demo.gif" alt="a short SCOUT demo for creating simple correlation base on analytic story">
