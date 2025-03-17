@@ -95,7 +95,7 @@ settings:
     by All_Risk.risk_object All_Risk.risk_object_type All_Risk.annotations.mitre_attack.mitre_tactic
     | `drop_dm_object_name(All_Risk)` | `security_content_ctime(firstTime)` | `security_content_ctime(lastTime)`
     | where source_count >= <<source_count_condition>>'
-  default_author: John Wick, Splunk
+  default_author: authors name, Splunk
   generated_attack_data_json: mitre_tid_tactic_technique.json
   generated_attack_tid_desc_json: mitre_tid_name_description.json
   generated_sec_con_json: security_content_df.json
