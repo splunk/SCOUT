@@ -36,7 +36,8 @@ class GenerateDataUtility:
         ### get security content detection dir path
         security_content_path = self.hu.read_config_settings('security_content_detection_dir_path')
         security_content_base_path, detection_types, files = self.hu.enumerate_folder_path(security_content_path)
-
+        if "deprecated" in detection_types:
+            detection_types.remove("deprecated")
         ### prepare all possible detection set
         option_detection_type = st.multiselect("select detection type filter: ", detection_types)
 
@@ -189,15 +190,18 @@ class GenerateDataUtility:
 
                     story_yml_buff = self.read_yml_file(story_file_path, encoding)
 
-                    if "name" in story_yml_buff:
+                    if story_yml_buff is not None and "name" in story_yml_buff:
                         _analytic_story = story_yml_buff['name'].lower()
+                        ### save the needed fields from detection yml file
+                        analytic_story_lower = story_yml_buff['name'].lower()
+                        analytic_story_descp = story_yml_buff['description']
+                        analytic_story_ref = story_yml_buff['references']
                     else:
                         _analytic_story = None
+                        analytic_story_lower = ""
+                        analytic_story_descp = ""
+                        analytic_story_ref = ""
                     
-                    ### save the needed fields from detection yml file
-                    analytic_story_lower = story_yml_buff['name'].lower()
-                    analytic_story_descp = story_yml_buff['description']
-                    analytic_story_ref = story_yml_buff['references']
 
                     if _analytic_story not in story_descp_dict:
                         story_descp_dict[_analytic_story] = [analytic_story_descp, analytic_story_ref]
