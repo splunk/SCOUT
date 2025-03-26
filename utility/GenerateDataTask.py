@@ -67,6 +67,12 @@ class GenerateDataUtility:
         return yml_buff
     
     def create_dataframe_from_json(self, data_list: list):
+        if not isinstance(data_list, list):
+            st.error("Expected a list of dictionaries but got:", type(data_list))
+            return pd.DataFrame()
+        
+        ## this code is for deprecated data that cause some exception due to malform json file
+        data_list = [data for data in data_list if isinstance(data, dict) and data not in (None, {}, [])]
         # Step 1: Normalize the JSON into a base DataFrame
         try:
             base_df = pd.concat([pd.json_normalize(data) for data in data_list], ignore_index=True)
@@ -184,6 +190,9 @@ class GenerateDataUtility:
             for dirs, subdirs, files in os.walk(self.hu.expand_path(self.hu.read_config_settings("security_content_story_dir_path"))):
 
                 for file_ in files:
+                    if not file_.endswith((".yaml",".yml")):
+                        continue
+                
                     story_file_path = os.path.join(dirs, file_)
 
                     encoding = self.get_encoding_type(story_file_path)
