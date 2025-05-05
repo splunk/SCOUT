@@ -240,7 +240,7 @@ class GenerateDataUtility:
                 st.warning("Attack CTI might be down.. working with cloned cti local repo...(https://github.com/mitre/cti )",icon="🏗️")
                 
                 ### lets do offline cti parsing
-                attack = attack_client(local_path = self.hu.expand_path(self.hu.read_config_settings("attackcti_repo_dir_path")))
+                attack = attack_client(local_paths = self.hu.expand_path(self.hu.read_config_settings("attackcti_repo_dir_path")))
 
             techniques = attack.get_techniques()
             attack_data_dict = defaultdict(list)
