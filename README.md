@@ -35,10 +35,7 @@ poetry shell
 ```
 poetry install
 ```
-7. Then run the streamlit main page
-```
-streamlit run scout-helper.py
-```
+
 
 ### Windows
 We recommend using the Windows Subsystem for Linux (WSL). You can find a tutorial [here](https://learn.microsoft.com/en-us/windows/wsl/install). After installing WSL, you can follow the steps described in the Linux section.
@@ -59,6 +56,10 @@ In the Configuration tab, the user must specify three key folder paths where thi
   
 All other fields can be left as they are.
 
+I. Then run the streamlit main page
+```
+streamlit run scout-helper.py
+```
 
 <img src="assets/config.png">
 
