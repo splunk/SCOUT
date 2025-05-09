@@ -1,6 +1,6 @@
 """
 Python Script Name: PreProcessTask.py
-Author: Teoderick Contreras
+Author: Teoderick Contreras, Splunk Threat Research Team (STRT)
 Date: 03-11.2025
 version: 0.1
 Description:
