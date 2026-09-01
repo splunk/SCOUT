@@ -1,7 +1,7 @@
 """
 Python Script Name: ConfigTask.py
-Author: Teoderick Contreras, Splunk Threat Research Team (STRT)
-Date: 03-11.2025
+Author: Teoderick Contreras
+Date: 09-01.2026
 version: 0.1
 Description:
 This module of the scout-helper Python tool is designed for managing its configuration settings, ensuring seamless integration and functionality.

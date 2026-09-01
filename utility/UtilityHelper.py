@@ -1,7 +1,7 @@
 """
 Python Script Name: UtilityHelper.py
-Author: Teoderick Contreras, Splunk Threat Research Team (STRT)
-Date: 03-11.2025
+Author: Teoderick Contreras
+Date: 09.01.2025
 version: 0.1
 Description:
 This module of the scout-helper Python tool provides utility functions 
@@ -187,7 +187,7 @@ class HelperUtility:
                 badge(type="github", url="https://github.com/splunk/security_content", name="splunk/security_content")
                 badge(type="github", url="https://github.com/splunk/attack_data", name="splunk/attack_data")
                 badge(type="github", url="https://github.com/splunk/contentctl", name="splunk/contentctl")
-                badge(type="github", url="https://github.com/splunk/scout-helper", name="splunk/scout-helper")
+                badge(type="github", url="https://github.com/splunk/SCOUT", name="splunk/SCOUT")
 
             st.divider()
         return

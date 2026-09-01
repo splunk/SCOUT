@@ -1,7 +1,7 @@
 """
 Python Script Name: PreProcessTask.py
-Author: Teoderick Contreras, Splunk Threat Research Team (STRT)
-Date: 03-11.2025
+Author: Teoderick Contreras
+Date: 09.01.2025
 version: 0.1
 Description:
 This module of the scout-helper Python tool facilitates pre-configure correlation searches based on Splunk Security Content:
@@ -42,7 +42,7 @@ class PreProcessUtility:
     def pre_process_by_analytic_story(self)->None:
         
 
-        self.pre_process_by_tag(self.json_df, "tags.analytic_story", self.perc_, self.corr_template)
+        self.pre_process_by_tag(self.json_df, "analytic_story", self.perc_, self.corr_template)
 
         return
     
@@ -50,15 +50,15 @@ class PreProcessUtility:
     def pre_process_by_mitre_attack_tid(self)->None:
         
 
-        self.pre_process_by_tag(self.json_df, "tags.mitre_attack_id", self.perc_, self.corr_template)
+        self.pre_process_by_tag(self.json_df, "mitre_attack_id", self.perc_, self.corr_template)
         return
     
     def pre_process_by_tag(self, json_df, field_tag, perc_, corr_template):
         
         ## delete and create new folder for new generated list of correlation search by tag
-        if field_tag == "tags.mitre_attack_id":
+        if field_tag == "mitre_attack_id":
             self.hu.delete_create_dir(self.hu.get_correlation_output_path_by_tag())
-        if field_tag == "tags.analytic_story":
+        if field_tag == "analytic_story":
             self.hu.delete_create_dir(self.hu.get_correlation_output_path_by_story())
 
         option_analytic_story = json_df[field_tag].explode().dropna().unique()
@@ -117,13 +117,13 @@ class PreProcessUtility:
 
     def generate_correlation_by_tag(self, field_tag_value, FILTERED_DF, updated_correlation_search, field_tag)->None:
         correlation_yml_name_field = ""
-        if field_tag == "tags.analytic_story":
+        if field_tag == "analytic_story":
             correlation_yml_name_field = f"Correlation Search for {field_tag_value}"
             
             ## create a correlation yml file
             output_dir_path = self.hu.get_correlation_output_path_by_story()
         
-        elif field_tag == "tags.mitre_attack_id":
+        elif field_tag == "mitre_attack_id":
             
             ## create a correlation yml file
             output_dir_path = self.hu.get_correlation_output_path_by_tag()
@@ -160,9 +160,9 @@ class PreProcessUtility:
 
 
 
-        if field_tag == "tags.analytic_story":
+        if field_tag == "analytic_story":
             self.fill_up_correlation_yml_file_by_story(self.hu.expand_path(dst_file_path), corr_yml_file_name, FILTERED_DF, field_tag_value, updated_correlation_search)
-        elif field_tag == "tags.mitre_attack_id":
+        elif field_tag == "mitre_attack_id":
             self.fill_up_correlation_yml_file_by_tid(self.hu.expand_path(dst_file_path), corr_yml_file_name, FILTERED_DF, field_tag_value, updated_correlation_search)
         return
 
@@ -184,16 +184,17 @@ class PreProcessUtility:
         corr_yml_file_buff['name'] = corr_yml_file_name
         corr_yml_file_buff['author'] = self.hu.read_config_settings('default_author')
         corr_yml_file_buff['id'] = str(uuid.uuid4())
-        corr_yml_file_buff['date'] = date.today().strftime('%Y-%m-%d')
-        corr_yml_file_buff['tags']['analytic_story'] = field_tag_value
+        corr_yml_file_buff['creation_date'] = date.today().strftime('%Y-%m-%d')
+        corr_yml_file_buff['modification_date'] = date.today().strftime('%Y-%m-%d')
+        corr_yml_file_buff['analytic_story'] = field_tag_value
         corr_yml_file_buff['references']= story_descp_json[field_tag_value.lower()][1]
-        corr_yml_file_buff['tags']['message'] = corr_yml_file_name.lower() + " have been identified on $risk_object$."
+        ###corr_yml_file_buff['tags']['message'] = corr_yml_file_name.lower() + " have been identified on $risk_object$."
 
         ## update TID
         combined_tid = []
-        [combined_tid.extend(sublist) for sublist in [corr_tid.strip("[]").replace("'","").split(", ") for corr_tid in FILTERED_DF['tags.mitre_attack_id'].astype(str).dropna().unique().tolist()]]
+        [combined_tid.extend(sublist) for sublist in [corr_tid.strip("[]").replace("'","").split(", ") for corr_tid in FILTERED_DF['mitre_attack_id'].astype(str).dropna().unique().tolist()]]
 
-        corr_yml_file_buff['tags']['mitre_attack_id'] = list(set([i for i in combined_tid if i != "None"]))
+        corr_yml_file_buff['mitre_attack_id'] = list(set([i for i in combined_tid if i != "None"]))
 
         ## update search
         corr_yml_file_buff['search'] = str(updated_correlation_search + " | " + "`" + field_tag_value.lower().replace(" ", "_") + "_filter" + "`")
@@ -231,10 +232,11 @@ class PreProcessUtility:
         corr_yml_file_buff['name'] = corr_yml_file_name
         corr_yml_file_buff['author'] = self.hu.read_config_settings('default_author')
         corr_yml_file_buff['id'] = str(uuid.uuid4())
-        corr_yml_file_buff['date'] = date.today().strftime('%Y-%m-%d')
-        corr_yml_file_buff['tags']['mitre_attack_id'] = field_tag_value
+        corr_yml_file_buff['creation_date'] = date.today().strftime('%Y-%m-%d')
+        corr_yml_file_buff['modification_date'] = date.today().strftime('%Y-%m-%d')
+        corr_yml_file_buff['mitre_attack_id'] = field_tag_value
         corr_yml_file_buff['references']= tid_descp_json[field_tag_value][2]        
-        corr_yml_file_buff['tags']['message'] = corr_yml_file_name.lower() + " have been identified on $risk_object$."
+        ###corr_yml_file_buff['tags']['message'] = corr_yml_file_name.lower() + " have been identified on $risk_object$."
 
         ## update search
         corr_yml_file_buff['search'] = str(updated_correlation_search + " | " + "`" + field_tag_value.lower().replace(" ", "_") + "_filter" + "`")
@@ -245,8 +247,8 @@ class PreProcessUtility:
 
         ## update analytic story
         combined_story = []
-        [combined_story.extend(sublist) for sublist in [corr_tid.strip("[]").replace("'","").split(", ") for corr_tid in FILTERED_DF['tags.analytic_story'].astype(str).dropna().unique().tolist()]]
-        corr_yml_file_buff['tags']['analytic_story'] = list(set([i for i in combined_story if i != "None"]))
+        [combined_story.extend(sublist) for sublist in [corr_tid.strip("[]").replace("'","").split(", ") for corr_tid in FILTERED_DF['analytic_story'].astype(str).dropna().unique().tolist()]]
+        corr_yml_file_buff['analytic_story'] = list(set([i for i in combined_story if i != "None"]))
 
         ### show the generated yml file
         self.hu.yml_dump_file(correlation_yml_file_path, corr_yml_file_buff)

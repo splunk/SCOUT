@@ -1,7 +1,7 @@
 """
 Python Script Name: CorrelTask.py
-Author: Teoderick Contreras, Splunk Threat Research Team (STRT)
-Date: 03-11.2025
+Author: Teoderick Contreras
+Date: 09.01.2025
 version: 0.1
 Description:
 This module of the scout-helper Python tool manages Splunk correlation searches by leveraging security content, 
@@ -198,14 +198,15 @@ class CorrelationUtility:
         
         ## update date, id, author
         corr_yml_buff['id'] = str(uuid.uuid4())
-        corr_yml_buff['date'] = date.today().strftime('%Y-%m-%d')
+        corr_yml_buff['creation_date'] = date.today().strftime('%Y-%m-%d')
+        corr_yml_buff['modification_date'] = date.today().strftime('%Y-%m-%d')
         corr_yml_buff['author'] = field_value_out_dict["default_author"]
         corr_yml_buff['name'] = field_value_out_dict["correlation_yml_name"]
 
         ### update mitre attack id by grabbing the unique value of story in filtered dataframe and convert it to list
         combined_analytic_story = []
-        [combined_analytic_story.extend(sublist) for sublist in [corr_story.strip("[]").replace("'","").split(", ") for corr_story in FILTERED_DF['tags.analytic_story'].astype(str).dropna().unique().tolist()]]
-        corr_yml_buff['tags']['analytic_story'] = list(set(combined_analytic_story))
+        [combined_analytic_story.extend(sublist) for sublist in [corr_story.strip("[]").replace("'","").split(", ") for corr_story in FILTERED_DF['analytic_story'].astype(str).dropna().unique().tolist()]]
+        corr_yml_buff['analytic_story'] = list(set(combined_analytic_story))
 
         ### update references
         combined_references = []
@@ -214,14 +215,14 @@ class CorrelationUtility:
 
         ## update TID
         combined_tid = []
-        [combined_tid.extend(sublist) for sublist in [corr_tid.strip("[]").replace("'","").split(", ") for corr_tid in FILTERED_DF['tags.mitre_attack_id'].astype(str).dropna().unique().tolist()]]
-        corr_yml_buff['tags']['mitre_attack_id'] = list(set(combined_tid))
+        [combined_tid.extend(sublist) for sublist in [corr_tid.strip("[]").replace("'","").split(", ") for corr_tid in FILTERED_DF['mitre_attack_id'].astype(str).dropna().unique().tolist()]]
+        corr_yml_buff['mitre_attack_id'] = list(set(combined_tid))
         
         ### update search    
         corr_yml_buff['search'] =  str(updated_correlation_search + " | " + "`" + field_value_out_dict["correlation_yml_name"].lower().replace(" ", "_") + "_filter" + "`")
 
         ### update message
-        corr_yml_buff['tags']['message'] = field_value_out_dict["correlation_yml_name"].lower() + " have been identified on $risk_object$."
+        ###corr_yml_buff['message'] = field_value_out_dict["correlation_yml_name"].lower() + " have been identified on $risk_object$."
 
         ### update description
         corr_yml_buff['description'] = field_value_out_dict["correlation_description"]

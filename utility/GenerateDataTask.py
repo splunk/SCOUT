@@ -1,7 +1,7 @@
 """
 Python Script Name: GenerateDataTask.py
-Author: Teoderick Contreras, Splunk Threat Research Team (STRT)
-Date: 03-11.2025
+Author: Teoderick Contreras
+Date: 09.01.2025
 version: 0.1
 Description:
 This module of the scout-helper Python tool facilitates dataframe generation for all Splunk Security Content detections, 
@@ -184,7 +184,7 @@ class GenerateDataUtility:
         return
     
     def generate_story_description_json(self)->None:
-        with st.spinner("generating attack_data in progress. Please wait!!"):
+        with st.spinner("generating security content data in progress. Please wait!!"):
             story_descp_dict = {}
 
             for dirs, subdirs, files in os.walk(self.hu.expand_path(self.hu.read_config_settings("security_content_story_dir_path"))):
@@ -198,18 +198,21 @@ class GenerateDataUtility:
                     encoding = self.get_encoding_type(story_file_path)
 
                     story_yml_buff = self.read_yml_file(story_file_path, encoding)
+                    
 
-                    if story_yml_buff is not None and "name" in story_yml_buff:
+                    if story_yml_buff is not None and "name" in story_yml_buff and "description" in story_yml_buff:
                         _analytic_story = story_yml_buff['name'].lower()
                         ### save the needed fields from detection yml file
                         analytic_story_lower = story_yml_buff['name'].lower()
                         analytic_story_descp = story_yml_buff['description']
-                        analytic_story_ref = story_yml_buff['references']
+                        if 'references' in story_yml_buff:
+                            analytic_story_ref = story_yml_buff['references']
                     else:
                         _analytic_story = None
                         analytic_story_lower = ""
                         analytic_story_descp = ""
                         analytic_story_ref = ""
+                        
                     
 
                     if _analytic_story not in story_descp_dict:
@@ -236,13 +239,16 @@ class GenerateDataUtility:
         with st.spinner("generating attack_data in progress. Please wait!!"):
             try:
                 attack = attack_client()
-            except:
+                techniques = attack.get_techniques()
+            except Exception:
                 st.warning("Attack CTI might be down.. working with cloned cti local repo...(https://github.com/mitre/cti )",icon="🏗️")
-                
-                ### lets do offline cti parsing
-                attack = attack_client(local_paths = self.hu.expand_path(self.hu.read_config_settings("attackcti_repo_dir_path")))
-
-            techniques = attack.get_techniques()
+                cti_root = self.hu.expand_path(self.hu.read_config_settings("attackcti_repo_dir_path"))
+                attack = attack_client(local_paths={
+                    "enterprise": os.path.join(cti_root, "enterprise-attack"),
+                    "mobile": os.path.join(cti_root, "mobile-attack"),
+                    "ics": os.path.join(cti_root, "ics-attack"),
+                })
+                techniques = attack.get_techniques()
             attack_data_dict = defaultdict(list)
             attack_tid_dict = {}
             for technique in techniques:
